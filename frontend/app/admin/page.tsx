@@ -234,7 +234,7 @@ export default function AdminPortal() {
                     </div>
                   )}
 
-                  {error && <div className="flex items-center gap-3 p-5 rounded-2xl text-sm font-bold bg-red-50 text-red-700 ring-1 ring-red-200 animate-in fade-in slide-in-from-bottom-2"><AlertOctagon className="w-5 h-5 shrink-0" />{error}</div>}
+                  {error && <div className="flex items-center gap-3 p-5 rounded-2xl text-sm font-bold bg-red-50 text-red-700 ring-1 ring-red-200 animate-in fade-in slide-in-from-bottom-2"><AlertOctagon className="w-5 h-5 shrink-0" />{typeof error === 'string' ? error : JSON.stringify(error)}</div>}
                   <button type="submit" disabled={loadingReg} className="px-10 py-4 mt-4 bg-zinc-900 hover:bg-black active:scale-[0.98] text-white font-bold rounded-2xl transition-all shadow-[0_0_20px_rgba(0,0,0,0.1)] disabled:opacity-50 tracking-wide text-sm flex items-center gap-2">
                     {loadingReg ? "Generating Credentials..." : "Generate Secure Account"}
                   </button>

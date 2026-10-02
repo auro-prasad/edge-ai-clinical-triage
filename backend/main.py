@@ -2,6 +2,8 @@ import json
 import os
 import io
 import csv
+import random
+import string
 import requests
 from fastapi.responses import StreamingResponse
 from datetime import datetime
@@ -52,7 +54,16 @@ class TriageSubmissionRequest(BaseModel):
 
 class OverrideRequest(BaseModel):
     new_priority: str
-
+class ProvisionAccountRequest(BaseModel):
+    role: str
+    name: str
+    email: str
+    age: Optional[int] = None
+    gender: Optional[str] = None
+    phone: Optional[str] = None
+    address: Optional[str] = None
+    qualifications: Optional[str] = None
+    specialization: Optional[str] = None
 
 # ==========================================
 # JSON BACKUP UTILITY (Retained from original)
@@ -141,7 +152,7 @@ def login(request: LoginRequest, db: Session = Depends(get_db)):
 # IT ADMIN ENDPOINTS
 # ==========================================
 @app.post("/api/users")
-def create_user(user: schemas.ProvisionAccountRequest, db: Session = Depends(get_db)):
+def create_user(user: ProvisionAccountRequest, db: Session = Depends(get_db)):
     # 1. Prevent Duplicate Emails across both tables
     if db.query(models.PatientProfile).filter(models.PatientProfile.email == user.email).first() or \
        db.query(models.StaffProfile).filter(models.StaffProfile.email == user.email).first():
@@ -216,7 +227,7 @@ def get_registered_patients(db: Session = Depends(get_db)):
             "latest_triage": (latest_enc.doctor_override or latest_enc.triage_priority) if latest_enc else "NO RECORD",
             "latest_reasoning": latest_enc.reasoning if latest_enc else "No prior triage records found in the system.",
             "latest_raw_note": latest_enc.raw_note if latest_enc else "N/A",
-            "latest_date": latest_enc.created_at.strftime("%B %d, %Y - %H:%M") if latest_enc else "N/A"
+            "latest_date": latest_enc.created_at.strftime("%B %d, %Y - %H:%M") if (latest_enc and latest_enc.created_at) else "N/A"
         })
         
     return directory
