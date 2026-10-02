@@ -1,0 +1,2915 @@
+[
+  {
+    "id": 12,
+    "Patient_ID": "MRN-1",
+    "Patient_Name": "Test Patient (Sandbox)",
+    "Patient_Age": 45,
+    "Patient_Gender": "Other",
+    "Triage_Assessment": {
+      "Triage_Priority": "Medium",
+      "Reasoning": "Fallback applied due to AI error: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+      "Laymans_Terms": "Could not generate translation at this time."
+    },
+    "created_at": "2026-09-28 14:26:36"
+  },
+  {
+    "id": 11,
+    "Patient_ID": "MRN-1",
+    "Patient_Name": "Test Patient (Sandbox)",
+    "Patient_Age": 45,
+    "Patient_Gender": "Other",
+    "Triage_Assessment": {
+      "Triage_Priority": "Medium",
+      "Reasoning": "Fallback applied due to AI error: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+      "Laymans_Terms": "Could not generate translation at this time."
+    },
+    "created_at": "2026-09-28 14:06:39"
+  },
+  {
+    "id": 10,
+    "Patient_ID": "MRN-1",
+    "Patient_Name": "Test Patient (Sandbox)",
+    "Patient_Age": 45,
+    "Patient_Gender": "Other",
+    "Triage_Assessment": {
+      "Triage_Priority": "INVALID",
+      "Reasoning": "The provided text contains placeholder information and lacks meaningful clinical findings or medical symptoms required for triage.",
+      "Laymans_Terms": "No medical translation can be provided because the text does not contain a valid clinical note."
+    },
+    "created_at": "2026-09-28 13:59:46"
+  },
+  {
+    "id": 9,
+    "Patient_ID": "MRN-1",
+    "Patient_Name": "Test Patient (Sandbox)",
+    "Patient_Age": 45,
+    "Patient_Gender": "Other",
+    "Triage_Assessment": {
+      "Triage_Priority": "Medium",
+      "Reasoning": "Fallback applied due to AI error: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+      "Laymans_Terms": "Could not generate translation at this time."
+    },
+    "created_at": "2026-09-28 13:55:18"
+  },
+  {
+    "id": 8,
+    "Patient_ID": "MRN-1",
+    "Patient_Name": "Test Patient (Sandbox)",
+    "Patient_Age": 45,
+    "Patient_Gender": "Other",
+    "Triage_Assessment": {
+      "Triage_Priority": "Medium",
+      "Reasoning": "Fallback applied due to AI error: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+      "Laymans_Terms": "Could not generate translation at this time."
+    },
+    "created_at": "2026-09-28 13:54:47"
+  },
+  {
+    "id": 7,
+    "Patient_ID": "MRN-1",
+    "Patient_Name": "Test Patient (Sandbox)",
+    "Patient_Age": 45,
+    "Patient_Gender": "Other",
+    "Triage_Assessment": {
+      "Triage_Priority": "Medium",
+      "Reasoning": "Fallback applied due to AI error: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+      "Laymans_Terms": "Could not generate translation at this time."
+    },
+    "created_at": "2026-09-28 13:54:30"
+  },
+  {
+    "id": 6,
+    "Patient_ID": "MRN-1",
+    "Patient_Name": "Test Patient (Sandbox)",
+    "Patient_Age": 45,
+    "Patient_Gender": "Other",
+    "Triage_Assessment": {
+      "Triage_Priority": "Medium",
+      "Reasoning": "Fallback applied due to AI error: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+      "Laymans_Terms": "Could not generate translation at this time."
+    },
+    "created_at": "2026-09-28 13:54:12"
+  },
+  {
+    "id": 1,
+    "Patient_ID": "MRN-3",
+    "Patient_Name": "Robert Vance",
+    "Patient_Age": 1,
+    "Patient_Gender": "Male",
+    "Triage_Assessment": {
+      "Triage_Priority": "High",
+      "Reasoning": "The patient exhibits classic signs of an acute myocardial infarction, including crushing chest pain radiating to the jaw, diaphoresis, severe hypertension, and hypoxia. These critical cardiac symptoms indicate a life-threatening emergency requiring immediate resuscitation and intervention.",
+      "Laymans_Terms": "The patient is showing severe warning signs of a heart attack, including crushing chest pain that spreads to the jaw, sweating, high blood pressure, and low oxygen levels, which require urgent emergency treatment."
+    },
+    "created_at": "2026-09-27 16:36:13"
+  },
+  {
+    "Extracted_Data": {
+      "Diagnoses": [
+        "##mity",
+        "##or"
+      ],
+      "Symptoms": [
+        "pain",
+        "def",
+        "sensation",
+        "nerve"
+      ],
+      "Medications": [],
+      "Procedures_Vitals": [
+        "x",
+        "ray",
+        "vital",
+        "refill"
+      ]
+    },
+    "Triage_Assessment": {
+      "Triage_Priority": "Medium",
+      "Reasoning": "The patient has a visible forearm deformity and severe pain requiring prompt evaluation and splinting, but intact neurovascular function and stable vitals make this urgent rather than an immediate life or limb threat.",
+      "Laymans_Terms": "The patient likely broke a bone in his right arm after falling off a skateboard. He is in severe pain and needs an X-ray and a splint, but the blood flow and feeling in his fingers are normal and his vital signs are stable."
+    },
+    "id": 2,
+    "Patient_ID": "PT-0002",
+    "Patient_Name": "Marcus Chen",
+    "Patient_Age": 19,
+    "Patient_Gender": "Male"
+  },
+  {
+    "Extracted_Data": {
+      "Diagnoses": [],
+      "Symptoms": [
+        "dry",
+        "patch of"
+      ],
+      "Medications": [],
+      "Procedures_Vitals": [
+        "medication",
+        "vital",
+        "moisturizing cream"
+      ]
+    },
+    "Triage_Assessment": {
+      "Triage_Priority": "Low",
+      "Reasoning": "The patient presents for a routine medication refill with a minor, non-painful skin issue and normal vital signs. There are no acute distress symptoms or critical red flags, making this a low-priority clinical case.",
+      "Laymans_Terms": "You came in for a routine refill of your medication and mentioned a small, dry patch of skin on your knuckle. Your vital signs are completely normal, and there are no concerning or severe symptoms."
+    },
+    "id": 1,
+    "Patient_ID": "PT-0001",
+    "Patient_Name": "Sarah Jenkins",
+    "Patient_Age": 62,
+    "Patient_Gender": "Female"
+  },
+  {
+    "Extracted_Data": {
+      "Diagnoses": [
+        "##mity",
+        "##or"
+      ],
+      "Symptoms": [
+        "def",
+        "nerve",
+        "sensation",
+        "pain"
+      ],
+      "Medications": [],
+      "Procedures_Vitals": [
+        "ray",
+        "x",
+        "vital",
+        "refill"
+      ]
+    },
+    "Triage_Assessment": {
+      "Triage_Priority": "Medium",
+      "Reasoning": "Fallback applied due to AI error: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+      "Laymans_Terms": "Could not generate translation at this time."
+    },
+    "id": 2,
+    "Patient_ID": "PT-0002",
+    "Patient_Name": "Marcus Chen",
+    "Patient_Age": 19,
+    "Patient_Gender": "Male"
+  },
+  {
+    "Extracted_Data": {
+      "Diagnoses": [],
+      "Symptoms": [
+        "diminished breath",
+        "tension",
+        "difficulty",
+        "pain"
+      ],
+      "Medications": [],
+      "Procedures_Vitals": [
+        "hr",
+        "vital",
+        "spo2",
+        "bp"
+      ]
+    },
+    "Triage_Assessment": {
+      "Triage_Priority": "High",
+      "Reasoning": "The patient exhibits classic signs of a tension pneumothorax, including tracheal deviation, absent breath sounds on one side, severe hypoxia, and obstructive shock (hypotension and severe tachycardia). This is an immediate life-threatening medical emergency requiring urgent intervention to relieve pressure in the chest cavity.",
+      "Laymans_Terms": "The patient was in a serious car accident and has a trapped air pocket in their chest that is collapsing a lung and squeezing the heart. This has caused dangerously low blood pressure and critically low oxygen levels, requiring immediate emergency lifesaving care."
+    },
+    "id": 1,
+    "Patient_ID": "PT-0001",
+    "Patient_Name": "Sarah Jenkins",
+    "Patient_Age": 62,
+    "Patient_Gender": "Female"
+  },
+  {
+    "Extracted_Data": {
+      "Diagnoses": [],
+      "Symptoms": [
+        "crushing",
+        "pain",
+        "shortness of"
+      ],
+      "Medications": [],
+      "Procedures_Vitals": []
+    },
+    "Triage_Assessment": {
+      "Triage_Priority": "High",
+      "Reasoning": "The patient presents with classic red-flag symptoms of an acute coronary syndrome or myocardial infarction, including crushing chest pain radiating to the left arm and severe dyspnea. This represents a potentially life-threatening medical emergency requiring immediate diagnostic evaluation and intervention.",
+      "Laymans_Terms": "The patient is having severe chest pain that spreads to their left arm along with major trouble breathing, which are warning signs of a heart attack."
+    },
+    "id": 2,
+    "Patient_ID": "PT-0002",
+    "Patient_Name": "John Doe",
+    "Patient_Age": 58,
+    "Patient_Gender": "Male"
+  },
+  {
+    "Extracted_Data": {
+      "Diagnoses": [],
+      "Symptoms": [
+        "crushing",
+        "pain",
+        "shortness of"
+      ],
+      "Medications": [],
+      "Procedures_Vitals": []
+    },
+    "Triage_Assessment": {
+      "Triage_Priority": "Medium",
+      "Reasoning": "Fallback applied due to AI error: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+      "Laymans_Terms": "Could not generate translation at this time."
+    },
+    "id": 1,
+    "Patient_ID": "PT-0001",
+    "Patient_Name": "John Doe",
+    "Patient_Age": 58,
+    "Patient_Gender": "Male"
+  },
+  {
+    "Extracted_Data": {
+      "Diagnoses": [],
+      "Symptoms": [],
+      "Medications": [],
+      "Procedures_Vitals": [
+        "hs"
+      ]
+    },
+    "Triage_Assessment": {
+      "Triage_Priority": "INVALID",
+      "Reasoning": "The provided text consists of random characters and is not a valid medical record or clinical note.",
+      "Laymans_Terms": "No medical translation can be provided for non-medical text."
+    },
+    "Patient_ID": "PT-515238"
+  },
+  {
+    "Extracted_Data": {
+      "Diagnoses": [
+        "at",
+        "ische",
+        "##bri"
+      ],
+      "Symptoms": [
+        "##red",
+        "weakness",
+        "speech",
+        "##ur"
+      ],
+      "Medications": [],
+      "Procedures_Vitals": [
+        "vital",
+        "spo",
+        "bp",
+        "hr",
+        "ct"
+      ]
+    },
+    "Triage_Assessment": {
+      "Triage_Priority": "High",
+      "Reasoning": "The patient is presenting with classic signs of an acute ischemic stroke within the critical hyperacute treatment window, accompanied by severe hypertension. Immediate neuroimaging and clinical intervention are required to prevent permanent brain damage or death.",
+      "Laymans_Terms": "A 72-year-old man is showing sudden signs of a stroke, including a drooping face, weakness on his right side, and slurred speech that started 45 minutes ago. Due to his symptoms and very high blood pressure, he urgently needs a head scan to look for a blood clot in his brain."
+    },
+    "Patient_ID": "PT-4FF0B5"
+  },
+  {
+    "Extracted_Data": {
+      "Diagnoses": [],
+      "Symptoms": [
+        "difficulty",
+        "rash",
+        "swelling"
+      ],
+      "Medications": [
+        "##tisone",
+        "##cor",
+        "li",
+        "hydro",
+        "##opril",
+        "##sin"
+      ],
+      "Procedures_Vitals": [
+        "bp",
+        "hr",
+        "vital",
+        "temp"
+      ]
+    },
+    "Triage_Assessment": {
+      "Triage_Priority": "Low",
+      "Reasoning": "The patient presents with a mild, localized skin rash following outdoor exposure, with completely normal vital signs and no systemic symptoms such as respiratory distress or anaphylaxis. This lack of high-risk features or hemodynamic instability indicates a low-acuity condition appropriate for conservative outpatient management.",
+      "Laymans_Terms": "You came in with a mild, itchy skin rash on your left arm after hiking, which is likely a simple reaction to a plant. Your vitals are completely normal and you have no trouble breathing or swelling, so you were safely sent home with a prescription anti-itch cream to help soothe the skin."
+    },
+    "Patient_ID": "PT-A52C25"
+  },
+  {
+    "Extracted_Data": {
+      "Diagnoses": [
+        "ische",
+        "##bri",
+        "at"
+      ],
+      "Symptoms": [
+        "weakness",
+        "speech",
+        "##ur",
+        "##red"
+      ],
+      "Medications": [],
+      "Procedures_Vitals": [
+        "bp",
+        "spo",
+        "hr",
+        "vital",
+        "ct"
+      ]
+    },
+    "Triage_Assessment": {
+      "Triage_Priority": "High",
+      "Reasoning": "The patient exhibits classic symptoms of an acute ischemic stroke with onset within the critical time window for potential thrombolytic intervention, alongside dangerously elevated blood pressure and a predisposing history of atrial fibrillation. Immediate neuroimaging and rapid medical evaluation are mandatory to prevent irreversible brain tissue damage.",
+      "Laymans_Terms": "The patient is a 72-year-old man showing clear signs of a stroke that started very recently, including weakness on his right side, facial drooping, and trouble speaking. Because stroke symptoms require urgent, time-sensitive care and his blood pressure is extremely high, the medical team is quickly rushing him for a head scan to check for a blocked blood vessel in his brain."
+    },
+    "Patient_ID": "PT-D495B1"
+  },
+  {
+    "Extracted_Data": {
+      "Diagnoses": [],
+      "Symptoms": [],
+      "Medications": [
+        "metformin"
+      ],
+      "Procedures_Vitals": [
+        "vital",
+        "blood sugar"
+      ]
+    },
+    "Triage_Assessment": {
+      "Triage_Priority": "Low",
+      "Reasoning": "The patient presents for a routine follow-up with well-controlled blood glucose levels, stable vital signs, and no reports of acute symptoms or diabetic complications.",
+      "Laymans_Terms": "You had a routine 6-month checkup for your Type 2 diabetes. Your blood sugar levels are well-controlled, you have no vision problems or nerve pain, and your current medication is working well."
+    },
+    "Patient_ID": "PT-D78349"
+  },
+  {
+    "Extracted_Data": {
+      "Diagnoses": [],
+      "Symptoms": [
+        "and",
+        "hive",
+        "##heezing",
+        "swelling",
+        "struggling to catch her breath",
+        "anxious",
+        "w"
+      ],
+      "Medications": [
+        "##inephrine auto - inject",
+        "ep"
+      ],
+      "Procedures_Vitals": [
+        "sp",
+        "vital"
+      ]
+    },
+    "Triage_Assessment": {
+      "Triage_Priority": "High",
+      "Reasoning": "The patient is experiencing severe, life-threatening anaphylaxis with acute respiratory compromise, evidenced by wheezing, low oxygen levels (SpO2 88%), and facial swelling following peanut exposure. Immediate epinephrine was indicated due to the rapid onset and risk of complete airway obstruction or cardiovascular collapse.",
+      "Laymans_Terms": "Your 7-year-old daughter is having a severe allergic reaction after eating a peanut butter cookie, which caused hives, swelling, and trouble breathing. The medical team immediately gave her a medicine called epinephrine (an epi-pen) to help open her airways, and they are closely monitoring her to make sure she stays safe and gets the oxygen she needs."
+    },
+    "Patient_ID": "PT-44267E"
+  },
+  {
+    "Extracted_Data": {
+      "Diagnoses": [],
+      "Symptoms": [
+        "and",
+        "hive",
+        "##heezing",
+        "swelling",
+        "struggling to catch her breath",
+        "anxious",
+        "w"
+      ],
+      "Medications": [
+        "##inephrine auto - inject",
+        "ep"
+      ],
+      "Procedures_Vitals": [
+        "sp",
+        "vital"
+      ]
+    },
+    "Triage_Assessment": {
+      "Triage_Priority": "Medium",
+      "Reasoning": "Fallback applied due to AI error: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+      "Laymans_Terms": "Could not generate translation at this time."
+    },
+    "Patient_ID": "PT-F1D746"
+  },
+  {
+    "Extracted_Data": {
+      "Diagnoses": [],
+      "Symptoms": [
+        "shortness of breath",
+        "pain"
+      ],
+      "Medications": [
+        "as",
+        "##glycerin",
+        "##pirin",
+        "##tro",
+        "ni"
+      ],
+      "Procedures_Vitals": [
+        "sp",
+        "vital",
+        "hr",
+        "bp"
+      ]
+    },
+    "Triage_Assessment": {
+      "Triage_Priority": "High",
+      "Reasoning": "The patient presents with classic symptoms of acute coronary syndrome, including severe chest pain radiating to the jaw, shortness of breath, sweating, and abnormal vitals (tachycardia, hypertension, and hypoxia). Given his significant risk factors of diabetes and hypertension, immediate evaluation for a potentially life-threatening cardiac event is required.",
+      "Laymans_Terms": "You are a 58-year-old man who arrived by ambulance with severe chest pain spreading to your jaw, trouble breathing, and heavy sweating. Your blood pressure and heart rate are elevated, and your oxygen level is slightly low. Because of these symptoms and your history of high blood pressure and diabetes, the paramedics gave you aspirin and a tablet under your tongue to help your heart right away."
+    },
+    "Patient_ID": "PT-CDFD27"
+  },
+  {
+    "Extracted_Data": {
+      "Diagnoses": [],
+      "Symptoms": [
+        "shortness of breath",
+        "pain"
+      ],
+      "Medications": [
+        "as",
+        "ni",
+        "##glycerin",
+        "##tro",
+        "##pirin"
+      ],
+      "Procedures_Vitals": [
+        "sp",
+        "vital",
+        "hr",
+        "bp"
+      ]
+    },
+    "Triage_Assessment": {
+      "Triage_Priority": "Medium",
+      "Reasoning": "Fallback applied due to AI error: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/gemini-3.6-flash for the latest features and improvements. We recommend you to use the Interactions API.', 'status': 'NOT_FOUND'}}",
+      "Laymans_Terms": "Could not generate translation at this time."
+    },
+    "Patient_ID": "PT-422A27"
+  },
+  {
+    "Extracted_Data": {
+      "Diagnoses": [],
+      "Symptoms": [
+        "shortness of breath",
+        "pain"
+      ],
+      "Medications": [
+        "as",
+        "ni",
+        "##glycerin",
+        "##tro",
+        "##pirin"
+      ],
+      "Procedures_Vitals": [
+        "sp",
+        "vital",
+        "hr",
+        "bp"
+      ]
+    },
+    "Triage_Assessment": {
+      "Triage_Priority": "Medium",
+      "Reasoning": "Fallback applied due to AI error: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/gemini-3.6-flash for the latest features and improvements. We recommend you to use the Interactions API.', 'status': 'NOT_FOUND'}}",
+      "Laymans_Terms": "Could not generate translation at this time."
+    },
+    "Patient_ID": "PT-303138"
+  },
+  {
+    "Extracted_Data": {
+      "Diagnoses": [],
+      "Symptoms": [
+        "pain",
+        "shortness of breath"
+      ],
+      "Medications": [
+        "##tro",
+        "##glycerin",
+        "##pirin",
+        "ni",
+        "as"
+      ],
+      "Procedures_Vitals": [
+        "bp",
+        "hr",
+        "sp",
+        "vital"
+      ]
+    },
+    "Triage_Assessment": {
+      "Triage_Priority": "Medium",
+      "Reasoning": "Fallback applied due to AI error: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.",
+      "Laymans_Terms": "Could not generate translation at this time."
+    },
+    "Patient_ID": "PT-7FA57B"
+  },
+  {
+    "Extracted_Data": {
+      "Diagnoses": [],
+      "Symptoms": [
+        "pain",
+        "shortness of breath"
+      ],
+      "Medications": [
+        "##pirin",
+        "ni",
+        "as",
+        "##tro",
+        "##glycerin"
+      ],
+      "Procedures_Vitals": [
+        "vital",
+        "hr",
+        "sp",
+        "bp"
+      ]
+    },
+    "Triage_Assessment": {
+      "Triage_Priority": "Medium",
+      "Reasoning": "Fallback applied due to AI error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.",
+      "Laymans_Terms": "Could not generate translation at this time."
+    },
+    "Patient_ID": "PT-288EA0"
+  },
+  {
+    "Extracted_Data": {
+      "Diagnoses": [],
+      "Symptoms": [
+        "pain",
+        "shortness of breath"
+      ],
+      "Medications": [
+        "##pirin",
+        "ni",
+        "as",
+        "##tro",
+        "##glycerin"
+      ],
+      "Procedures_Vitals": [
+        "vital",
+        "hr",
+        "sp",
+        "bp"
+      ]
+    },
+    "Triage_Assessment": {
+      "Triage_Priority": "Medium",
+      "Reasoning": "Fallback applied due to AI error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.",
+      "Laymans_Terms": "Could not generate translation at this time."
+    },
+    "Patient_ID": "PT-89F625"
+  },
+  {
+    "Extracted_Data": {
+      "Diagnoses": [],
+      "Symptoms": [
+        "pain",
+        "shortness of breath"
+      ],
+      "Medications": [
+        "##pirin",
+        "ni",
+        "as",
+        "##tro",
+        "##glycerin"
+      ],
+      "Procedures_Vitals": [
+        "vital",
+        "hr",
+        "sp",
+        "bp"
+      ]
+    },
+    "Triage_Assessment": {
+      "Triage_Priority": "Medium",
+      "Reasoning": "Fallback applied due to AI error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.",
+      "Laymans_Terms": "Could not generate translation at this time."
+    },
+    "Patient_ID": "PT-39EF0B"
+  },
+  {
+    "Original_Note_Length": 52,
+    "Extracted_Data": {
+      "Demographics": [
+        "Age: 22-year-old female"
+      ],
+      "Symptoms": [
+        "pain",
+        "swelling",
+        "fracture",
+        "to bear weight"
+      ],
+      "Diagnoses": [],
+      "Medications": [],
+      "Procedures_Vitals": [
+        "right ankle",
+        "BP",
+        "Vital",
+        "X-ray",
+        "right"
+      ],
+      "Lab_Values": [
+        "85",
+        "110"
+      ]
+    },
+    "Triage_Assessment": {
+      "Triage_Priority": "Medium",
+      "Reasoning": [
+        "Urgent indicator: 'fracture'",
+        "Urgent indicator: 'swelling'",
+        "Urgent indicator: 'pain'"
+      ]
+    },
+    "Patient_ID": "PT-2B7779"
+  },
+  {
+    "Original_Note_Length": 43,
+    "Extracted_Data": {
+      "Demographics": [
+        "Age: 45-year-old male"
+      ],
+      "Symptoms": [
+        "feeling well"
+      ],
+      "Diagnoses": [],
+      "Medications": [
+        {
+          "name": "medication",
+          "dosage": "Not specified"
+        },
+        {
+          "name": "Atorvastatin",
+          "dosage": "20mg"
+        }
+      ],
+      "Procedures_Vitals": [
+        "Vitals",
+        "physical check"
+      ],
+      "Lab_Values": [
+        "within normal limits"
+      ]
+    },
+    "Triage_Assessment": {
+      "Triage_Priority": "Low",
+      "Reasoning": [
+        "No critical or urgent clinical flags detected."
+      ]
+    },
+    "Patient_ID": "PT-325391"
+  },
+  {
+    "Original_Note_Length": 52,
+    "Extracted_Data": {
+      "Demographics": [
+        "Age: 22-year-old female"
+      ],
+      "Symptoms": [
+        "pain",
+        "fracture",
+        "swelling",
+        "to bear weight"
+      ],
+      "Diagnoses": [],
+      "Medications": [],
+      "Procedures_Vitals": [
+        "Vital",
+        "right",
+        "right ankle",
+        "BP",
+        "X-ray"
+      ],
+      "Lab_Values": [
+        "110",
+        "85"
+      ]
+    },
+    "Triage_Assessment": {
+      "Triage_Priority": "High",
+      "Reasoning": [
+        "Critical indicator (Text Match): 'severe'"
+      ]
+    },
+    "Patient_ID": "PT-2608CD"
+  },
+  {
+    "Original_Note_Length": 46,
+    "Extracted_Data": {
+      "Demographics": [
+        "Age: 58-year-old male"
+      ],
+      "Symptoms": [
+        "pain",
+        "shortness of breath"
+      ],
+      "Diagnoses": [
+        "hyper"
+      ],
+      "Medications": [
+        {
+          "name": "nitroglycerin",
+          "dosage": "Not specified"
+        },
+        {
+          "name": "Aspirin",
+          "dosage": "324mg"
+        }
+      ],
+      "Procedures_Vitals": [
+        "chest",
+        "HR",
+        "Vital",
+        "BP",
+        "Sp"
+      ],
+      "Lab_Values": [
+        "180"
+      ]
+    },
+    "Triage_Assessment": {
+      "Triage_Priority": "High",
+      "Reasoning": [
+        "Critical indicator (Text Match): 'severe'",
+        "Critical indicator (Text Match): 'chest pain'",
+        "Critical indicator (Text Match): 'shortness of breath'"
+      ]
+    },
+    "Patient_ID": "PT-F60A93"
+  },
+  {
+    "Original_Note_Length": 46,
+    "Extracted_Data": {
+      "Demographics": [
+        "Age: 65-year-old male"
+      ],
+      "Symptoms": [
+        "shortness of breath",
+        "pain"
+      ],
+      "Diagnoses": [],
+      "Medications": [
+        {
+          "name": "nitroglycerin",
+          "dosage": "Not specified"
+        },
+        {
+          "name": "Aspirin",
+          "dosage": "324mg"
+        }
+      ],
+      "Procedures_Vitals": [
+        "Vital",
+        "chest",
+        "left arm",
+        "BP"
+      ],
+      "Lab_Values": []
+    },
+    "Triage_Assessment": {
+      "Triage_Priority": "High",
+      "Reasoning": [
+        "Critical indicator: 'shortness of breath'"
+      ]
+    },
+    "Patient_ID": "PT-59E594"
+  },
+  {
+    "Original_Note_Length": 204,
+    "Extracted_Data": {
+      "Demographics": [
+        "Age: 23-year-old white female"
+      ],
+      "Symptoms": [
+        "ergies",
+        "erythematous"
+      ],
+      "Diagnoses": [
+        "all"
+      ],
+      "Medications": [
+        {
+          "name": "spray",
+          "dosage": "Not specified"
+        },
+        {
+          "name": "All",
+          "dosage": "Not specified"
+        },
+        {
+          "name": "lorata",
+          "dosage": "Not specified"
+        },
+        {
+          "name": "Ortho Tri-Cyclen",
+          "dosage": "Not specified"
+        },
+        {
+          "name": "Nasonex",
+          "dosage": "Not specified"
+        },
+        {
+          "name": "medication",
+          "dosage": "Not specified"
+        }
+      ],
+      "Procedures_Vitals": [
+        "Vitals",
+        "Weight",
+        "Neck",
+        "Nasal mucosa",
+        "blood pressure",
+        "throat",
+        "each nostril"
+      ],
+      "Lab_Values": [
+        "124",
+        "130 pounds"
+      ]
+    },
+    "Triage_Assessment": {
+      "Triage_Priority": "Low",
+      "Reasoning": [
+        "No critical or urgent clinical flags detected."
+      ]
+    },
+    "Patient_ID": "PT-1000"
+  },
+  {
+    "Original_Note_Length": 350,
+    "Extracted_Data": {
+      "Demographics": [],
+      "Symptoms": [
+        "pains",
+        "nor"
+      ],
+      "Diagnoses": [
+        "physe",
+        "rheumatoid arthritis",
+        "thrombophlebitis",
+        "smoke",
+        "pancreatitis",
+        "fatty liver",
+        "allergic",
+        "COP",
+        "seats",
+        "shortness of breath",
+        "hiatal hernia",
+        "ten drinks",
+        "smoked significantly",
+        "nous",
+        "Denies obesity",
+        "Penicillin",
+        "shoes",
+        "infected gallbladder",
+        "less than three cigarettes a day",
+        "high blood pressure",
+        "tic ulcer disease",
+        "oarthritis",
+        "hypertension",
+        "high"
+      ],
+      "Medications": [],
+      "Procedures_Vitals": [
+        "chest",
+        "joint",
+        "foot",
+        "weight",
+        "ankle",
+        "muscle",
+        "right",
+        "knee",
+        "back"
+      ],
+      "Lab_Values": [
+        "170",
+        "lost",
+        "84 pounds",
+        "Negative"
+      ]
+    },
+    "Triage_Assessment": {
+      "Triage_Priority": "High",
+      "Reasoning": [
+        "Critical indicator: 'shortness of breath'"
+      ]
+    },
+    "Patient_ID": "PT-1001"
+  },
+  {
+    "Original_Note_Length": 716,
+    "Extracted_Data": {
+      "Demographics": [
+        "Sex: gentleman",
+        "Age: 42 years"
+      ],
+      "Symptoms": [
+        "weight",
+        "weight loss",
+        "walking",
+        "overweight",
+        "tired"
+      ],
+      "Diagnoses": [
+        "Atkins",
+        "tying shoes",
+        "difficulty",
+        "asthma",
+        "difficulty with airline seats",
+        "drink five days a week",
+        "eats",
+        "MI",
+        "used to public seating",
+        "difficulty walking",
+        "344"
+      ],
+      "Medications": [],
+      "Procedures_Vitals": [
+        "joint",
+        "foot",
+        "knee",
+        "leg",
+        "back"
+      ],
+      "Lab_Values": [
+        "25 pounds"
+      ]
+    },
+    "Triage_Assessment": {
+      "Triage_Priority": "Medium",
+      "Reasoning": [
+        "Urgent indicator: 'asthma'"
+      ]
+    },
+    "Patient_ID": "PT-1002"
+  },
+  {
+    "Original_Note_Length": 68,
+    "Extracted_Data": {
+      "Demographics": [],
+      "Symptoms": [
+        "per",
+        "enlargement"
+      ],
+      "Diagnoses": [],
+      "Medications": [],
+      "Procedures_Vitals": [
+        "ao",
+        "Left atrial",
+        "left vent",
+        "size",
+        "left ventricular ejection fraction",
+        "function",
+        "mit",
+        "tricus",
+        "aorti",
+        "pulmonary",
+        "left atrial diameter",
+        "LV systolic function",
+        "morphology",
+        "PA systolic pressure",
+        "tri"
+      ],
+      "Lab_Values": [
+        "51",
+        "36 mm",
+        "Normal"
+      ]
+    },
+    "Triage_Assessment": {
+      "Triage_Priority": "Low",
+      "Reasoning": [
+        "No critical or urgent clinical flags detected."
+      ]
+    },
+    "Patient_ID": "PT-1003"
+  },
+  {
+    "Original_Note_Length": 229,
+    "Extracted_Data": {
+      "Demographics": [],
+      "Symptoms": [
+        "ffusion",
+        "rdial",
+        "obliteration",
+        "ventricular relaxation pattern",
+        "abnormalities",
+        "per",
+        "cardiac mass",
+        "near",
+        "hyperdy",
+        "calcification",
+        "cal",
+        "lipomatous hypertrophy",
+        "thick"
+      ],
+      "Diagnoses": [
+        "ica",
+        "patent foramen ovale"
+      ],
+      "Medications": [],
+      "Procedures_Vitals": [
+        "aortic valve",
+        "structures",
+        "systo",
+        "right atrium",
+        "instantaneous gradient",
+        "systolic function",
+        "mean",
+        "ao",
+        "outflow tract gradient",
+        "mit",
+        "to leaflets",
+        "left",
+        "left atrial pressures",
+        "left atrium",
+        "interat",
+        "right ventricle",
+        "ventricular",
+        "ejection fraction",
+        "tri",
+        "wall motion",
+        "intra",
+        "right atrial pressure",
+        "mid cavity level",
+        "pulmonary",
+        "tricuspid"
+      ],
+      "Lab_Values": [
+        "elevated",
+        "34",
+        "hyperdynamic",
+        "normal",
+        "10",
+        "49 mm",
+        "increased",
+        "abnormal"
+      ]
+    },
+    "Triage_Assessment": {
+      "Triage_Priority": "Low",
+      "Reasoning": [
+        "No critical or urgent clinical flags detected."
+      ]
+    },
+    "Patient_ID": "PT-1004"
+  },
+  {
+    "Original_Note_Length": 728,
+    "Extracted_Data": {
+      "Demographics": [
+        "Age: 30-year-old"
+      ],
+      "Symptoms": [
+        "overweight"
+      ],
+      "Diagnoses": [
+        "obesity",
+        "bid obesity",
+        "SC"
+      ],
+      "Medications": [
+        {
+          "name": "EE",
+          "dosage": "Not specified"
+        },
+        {
+          "name": "Marcaine",
+          "dosage": "Not specified"
+        },
+        {
+          "name": "general anesthesia",
+          "dosage": "Not specified"
+        }
+      ],
+      "Procedures_Vitals": [
+        "subcos",
+        "me",
+        "entum",
+        "transverse colon",
+        "limb",
+        "el",
+        "midclavicular line",
+        "anterior to the midaxillary line",
+        "small",
+        "base of the mesentery",
+        "tery",
+        "distal"
+      ],
+      "Lab_Values": [
+        "15 mm"
+      ]
+    },
+    "Triage_Assessment": {
+      "Triage_Priority": "Low",
+      "Reasoning": [
+        "No critical or urgent clinical flags detected."
+      ]
+    },
+    "Patient_ID": "PT-1005"
+  },
+  {
+    "Original_Note_Length": 602,
+    "Extracted_Data": {
+      "Demographics": [
+        "Age: 31-year-old white female"
+      ],
+      "Symptoms": [
+        "loss",
+        "Lipodyst",
+        "full",
+        "Lipodystrophy",
+        "hy",
+        "fullness"
+      ],
+      "Diagnoses": [],
+      "Medications": [
+        {
+          "name": "lid",
+          "dosage": "Not specified"
+        }
+      ],
+      "Procedures_Vitals": [
+        "abdomen"
+      ],
+      "Lab_Values": []
+    },
+    "Triage_Assessment": {
+      "Triage_Priority": "Low",
+      "Reasoning": [
+        "No critical or urgent clinical flags detected."
+      ]
+    },
+    "Patient_ID": "PT-1006"
+  },
+  {
+    "Original_Note_Length": 109,
+    "Extracted_Data": {
+      "Demographics": [],
+      "Symptoms": [
+        "pericardial effusion",
+        "enlar",
+        "hypertro",
+        "vegetation",
+        "systemic venous return",
+        "Pulmonary"
+      ],
+      "Diagnoses": [],
+      "Medications": [],
+      "Procedures_Vitals": [
+        "sided",
+        "Mit",
+        "ao",
+        "aortic arch",
+        "descending aorta",
+        "at",
+        "return",
+        "right atrium",
+        "Cardiac",
+        "outflow",
+        "Pulmonary",
+        "great",
+        "ascending aorta",
+        "corona",
+        "views"
+      ],
+      "Lab_Values": [
+        "normal"
+      ]
+    },
+    "Triage_Assessment": {
+      "Triage_Priority": "Low",
+      "Reasoning": [
+        "No critical or urgent clinical flags detected."
+      ]
+    },
+    "Patient_ID": "PT-1007"
+  },
+  {
+    "Original_Note_Length": 242,
+    "Extracted_Data": {
+      "Demographics": [],
+      "Symptoms": [
+        "wounds",
+        "Wounds"
+      ],
+      "Diagnoses": [
+        "Lipodystrophy"
+      ],
+      "Medications": [
+        {
+          "name": "as",
+          "dosage": "Not specified"
+        }
+      ],
+      "Procedures_Vitals": [
+        "pubic area",
+        "edge",
+        "bil",
+        "per",
+        "thighs",
+        "knees",
+        "lateral hips",
+        "lateral thighs",
+        "abdomen"
+      ],
+      "Lab_Values": [
+        "650",
+        "50 cc"
+      ]
+    },
+    "Triage_Assessment": {
+      "Triage_Priority": "Low",
+      "Reasoning": [
+        "No critical or urgent clinical flags detected."
+      ]
+    },
+    "Patient_ID": "PT-1008"
+  },
+  {
+    "Original_Note_Length": 57,
+    "Extracted_Data": {
+      "Demographics": [],
+      "Symptoms": [
+        "per",
+        "rdial effusion",
+        "card"
+      ],
+      "Diagnoses": [
+        "mit"
+      ],
+      "Medications": [],
+      "Procedures_Vitals": [
+        "intra",
+        "left ventric",
+        "Tricuspid valve",
+        "Mitral valve",
+        "Aortic valve",
+        "Ejection fraction",
+        "cardiac chambers"
+      ],
+      "Lab_Values": [
+        "good",
+        "Trace",
+        "Normal"
+      ]
+    },
+    "Triage_Assessment": {
+      "Triage_Priority": "Low",
+      "Reasoning": [
+        "No critical or urgent clinical flags detected."
+      ]
+    },
+    "Patient_ID": "PT-1009"
+  },
+  {
+    "Original_Note_Length": 184,
+    "Extracted_Data": {
+      "Demographics": [
+        "Age: 50-year-old male"
+      ],
+      "Symptoms": [
+        "weight loss",
+        "overweight"
+      ],
+      "Diagnoses": [
+        "Morbid obesity"
+      ],
+      "Medications": [
+        {
+          "name": "esthesia",
+          "dosage": "Not specified"
+        },
+        {
+          "name": "Marcaine",
+          "dosage": "Not specified"
+        }
+      ],
+      "Procedures_Vitals": [
+        "ega",
+        "esophagogastroduodenosco",
+        "AN"
+      ],
+      "Lab_Values": []
+    },
+    "Triage_Assessment": {
+      "Triage_Priority": "Low",
+      "Reasoning": [
+        "No critical or urgent clinical flags detected."
+      ]
+    },
+    "Patient_ID": "PT-1010"
+  },
+  {
+    "Original_Note_Length": 83,
+    "Extracted_Data": {
+      "Demographics": [],
+      "Symptoms": [
+        "hypertrophy"
+      ],
+      "Diagnoses": [
+        "ao",
+        "cuspid regurgitation",
+        "ste",
+        "aortic regurgitation"
+      ],
+      "Medications": [],
+      "Procedures_Vitals": [
+        "ao",
+        "left ventric",
+        "sy",
+        "left vent",
+        "mit",
+        "appearance",
+        "left",
+        "left ventricular",
+        "right",
+        "tri"
+      ],
+      "Lab_Values": [
+        "1 to 2",
+        "30-35 mm",
+        "normal",
+        "increase",
+        "Normal"
+      ]
+    },
+    "Triage_Assessment": {
+      "Triage_Priority": "Low",
+      "Reasoning": [
+        "No critical or urgent clinical flags detected."
+      ]
+    },
+    "Patient_ID": "PT-1011"
+  },
+  {
+    "Original_Note_Length": 500,
+    "Extracted_Data": {
+      "Demographics": [],
+      "Symptoms": [
+        "hypodensities",
+        "edema",
+        "like illness",
+        "Mig",
+        "un",
+        "recovered",
+        "weakness",
+        "Confusion",
+        "passed",
+        "stiff"
+      ],
+      "Diagnoses": [
+        "HC"
+      ],
+      "Medications": [],
+      "Procedures_Vitals": [
+        "neck",
+        "PT",
+        "EK",
+        "RH",
+        "Other",
+        "right",
+        "uda",
+        "head"
+      ],
+      "Lab_Values": []
+    },
+    "Triage_Assessment": {
+      "Triage_Priority": "Low",
+      "Reasoning": [
+        "No critical or urgent clinical flags detected."
+      ]
+    },
+    "Patient_ID": "PT-1012"
+  },
+  {
+    "Original_Note_Length": 487,
+    "Extracted_Data": {
+      "Demographics": [],
+      "Symptoms": [
+        "weight",
+        "pain",
+        "deficit",
+        "asi",
+        "bloody bowel",
+        "dark tar",
+        "snor",
+        "swelling",
+        "dry eyes"
+      ],
+      "Diagnoses": [
+        "high cholesterol",
+        "liver disease",
+        "cardiac disease",
+        "bleeding",
+        "kidney disease, cirrhosis, hepatitis, diabetes mellitus",
+        "thyroid",
+        "II diabetes",
+        "les",
+        "ob",
+        "infections",
+        "ructive sleep",
+        "latex all",
+        "DV",
+        "HIV",
+        "hemor"
+      ],
+      "Medications": [
+        {
+          "name": "Veramist spray",
+          "dosage": "27.5 mcg"
+        },
+        {
+          "name": "Restasi",
+          "dosage": "Not specified"
+        },
+        {
+          "name": "Ba",
+          "dosage": "Not specified"
+        },
+        {
+          "name": "rim",
+          "dosage": "Not specified"
+        },
+        {
+          "name": "ibuprofen",
+          "dosage": "Not specified"
+        },
+        {
+          "name": "hydrochlorothiazide",
+          "dosage": "Not specified"
+        },
+        {
+          "name": "Crestor",
+          "dosage": "Not specified"
+        }
+      ],
+      "Procedures_Vitals": [
+        "joint",
+        "Neuro exam",
+        "gallbladder",
+        "peripheral ankle",
+        "Eye",
+        "mit",
+        "blood",
+        "Neck",
+        "lower ex",
+        "tendon reflex",
+        "respiratory"
+      ],
+      "Lab_Values": [
+        "low",
+        "hot",
+        "126",
+        "20"
+      ]
+    },
+    "Triage_Assessment": {
+      "Triage_Priority": "High",
+      "Reasoning": [
+        "Critical indicator: 'bleeding'"
+      ]
+    },
+    "Patient_ID": "PT-1013"
+  },
+  {
+    "Original_Note_Length": 452,
+    "Extracted_Data": {
+      "Demographics": [],
+      "Symptoms": [
+        "impacted"
+      ],
+      "Diagnoses": [],
+      "Medications": [
+        {
+          "name": "local an",
+          "dosage": "Not specified"
+        },
+        {
+          "name": "bupivacaine",
+          "dosage": "3.6 mL"
+        },
+        {
+          "name": "solution",
+          "dosage": "Not specified"
+        },
+        {
+          "name": "lidocaine",
+          "dosage": "7.2 mL"
+        }
+      ],
+      "Procedures_Vitals": [
+        "buccal",
+        "aspect",
+        "bu",
+        "teeth"
+      ],
+      "Lab_Values": []
+    },
+    "Triage_Assessment": {
+      "Triage_Priority": "Low",
+      "Reasoning": [
+        "No critical or urgent clinical flags detected."
+      ]
+    },
+    "Patient_ID": "PT-1014"
+  },
+  {
+    "Original_Note_Length": 292,
+    "Extracted_Data": {
+      "Demographics": [],
+      "Symptoms": [
+        "weight loss"
+      ],
+      "Diagnoses": [],
+      "Medications": [],
+      "Procedures_Vitals": [],
+      "Lab_Values": []
+    },
+    "Triage_Assessment": {
+      "Triage_Priority": "Low",
+      "Reasoning": [
+        "No critical or urgent clinical flags detected."
+      ]
+    },
+    "Patient_ID": "PT-1015"
+  },
+  {
+    "Original_Note_Length": 854,
+    "Extracted_Data": {
+      "Demographics": [
+        "Age: 50-year-old white male"
+      ],
+      "Symptoms": [
+        "ste",
+        "alteration",
+        "foreign body",
+        "dil",
+        "obstruction",
+        "foreign",
+        "stenosis"
+      ],
+      "Diagnoses": [
+        "ste",
+        "progressive problems",
+        "nosis",
+        "tracheomalacia",
+        "obstruction"
+      ],
+      "Medications": [],
+      "Procedures_Vitals": [
+        "trache",
+        "py",
+        "neck",
+        "bronchoscopy",
+        "tr",
+        "sub",
+        "bronch",
+        "Neck",
+        "tracheal",
+        "otti",
+        "subglottic",
+        "air",
+        "Air"
+      ],
+      "Lab_Values": []
+    },
+    "Triage_Assessment": {
+      "Triage_Priority": "Low",
+      "Reasoning": [
+        "No critical or urgent clinical flags detected."
+      ]
+    },
+    "Patient_ID": "PT-1016"
+  },
+  {
+    "Original_Note_Length": 230,
+    "Extracted_Data": {
+      "Demographics": [],
+      "Symptoms": [
+        "oriented",
+        "problems",
+        "hungry",
+        "full",
+        "alert"
+      ],
+      "Diagnoses": [],
+      "Medications": [
+        {
+          "name": "candy bar",
+          "dosage": "Not specified"
+        }
+      ],
+      "Procedures_Vitals": [
+        "temperature",
+        "pulse",
+        "weight",
+        "PHYSICAL EXAMINATION",
+        "BMI",
+        "blood pressure",
+        "Lap"
+      ],
+      "Lab_Values": [
+        "lost 3.8 pounds",
+        "197.7"
+      ]
+    },
+    "Triage_Assessment": {
+      "Triage_Priority": "Low",
+      "Reasoning": [
+        "No critical or urgent clinical flags detected."
+      ]
+    },
+    "Patient_ID": "PT-1017"
+  },
+  {
+    "Original_Note_Length": 331,
+    "Extracted_Data": {
+      "Demographics": [
+        "Sex: male",
+        "Sex: male",
+        "Age: 34-year-old gentleman"
+      ],
+      "Symptoms": [],
+      "Diagnoses": [],
+      "Medications": [
+        {
+          "name": "se",
+          "dosage": "Not specified"
+        },
+        {
+          "name": "Ba",
+          "dosage": "Not specified"
+        },
+        {
+          "name": "Betadine",
+          "dosage": "Not specified"
+        },
+        {
+          "name": "Anesthesia",
+          "dosage": "Not specified"
+        }
+      ],
+      "Procedures_Vitals": [
+        "right vas",
+        "Genitalia"
+      ],
+      "Lab_Values": []
+    },
+    "Triage_Assessment": {
+      "Triage_Priority": "Low",
+      "Reasoning": [
+        "No critical or urgent clinical flags detected."
+      ]
+    },
+    "Patient_ID": "PT-1018"
+  },
+  {
+    "Original_Note_Length": 261,
+    "Extracted_Data": {
+      "Demographics": [
+        "Age: 17-year-old female"
+      ],
+      "Symptoms": [
+        "foreign body"
+      ],
+      "Diagnoses": [
+        "cholecystect",
+        "illicit drugs",
+        "Negative",
+        "total hysterectomy",
+        "Significant"
+      ],
+      "Medications": [
+        {
+          "name": "antibiotics",
+          "dosage": "Not specified"
+        }
+      ],
+      "Procedures_Vitals": [
+        "air"
+      ],
+      "Lab_Values": [
+        "sufficient"
+      ]
+    },
+    "Triage_Assessment": {
+      "Triage_Priority": "Low",
+      "Reasoning": [
+        "No critical or urgent clinical flags detected."
+      ]
+    },
+    "Patient_ID": "PT-1019"
+  },
+  {
+    "Original_Note_Length": 115,
+    "Extracted_Data": {
+      "Demographics": [],
+      "Symptoms": [
+        "tracer activity",
+        "tracer",
+        "activity"
+      ],
+      "Diagnoses": [],
+      "Medications": [],
+      "Procedures_Vitals": [
+        "urinary bladder",
+        "skull",
+        "skeleton",
+        "kidney",
+        "CT",
+        "magnetic resonance imaging",
+        "right parietal",
+        "Prostate"
+      ],
+      "Lab_Values": [
+        "increased",
+        "normal"
+      ]
+    },
+    "Triage_Assessment": {
+      "Triage_Priority": "Low",
+      "Reasoning": [
+        "No critical or urgent clinical flags detected."
+      ]
+    },
+    "Patient_ID": "PT-1020"
+  },
+  {
+    "Original_Note_Length": 292,
+    "Extracted_Data": {
+      "Demographics": [
+        "Age: 30-year-old"
+      ],
+      "Symptoms": [
+        "weight loss"
+      ],
+      "Diagnoses": [],
+      "Medications": [
+        {
+          "name": "omep",
+          "dosage": "Not specified"
+        },
+        {
+          "name": "PC",
+          "dosage": "Not specified"
+        }
+      ],
+      "Procedures_Vitals": [
+        "Med",
+        "op"
+      ],
+      "Lab_Values": [
+        "stable",
+        "improved"
+      ]
+    },
+    "Triage_Assessment": {
+      "Triage_Priority": "Low",
+      "Reasoning": [
+        "No critical or urgent clinical flags detected."
+      ]
+    },
+    "Patient_ID": "PT-1021"
+  },
+  {
+    "Original_Note_Length": 150,
+    "Extracted_Data": {
+      "Demographics": [],
+      "Symptoms": [],
+      "Diagnoses": [],
+      "Medications": [],
+      "Procedures_Vitals": [
+        "skin",
+        "mal",
+        "All",
+        "testicular",
+        "va",
+        "left vas"
+      ],
+      "Lab_Values": []
+    },
+    "Triage_Assessment": {
+      "Triage_Priority": "Low",
+      "Reasoning": [
+        "No critical or urgent clinical flags detected."
+      ]
+    },
+    "Patient_ID": "PT-1022"
+  },
+  {
+    "Original_Note_Length": 223,
+    "Extracted_Data": {
+      "Demographics": [
+        "Sex: gentleman"
+      ],
+      "Symptoms": [],
+      "Diagnoses": [],
+      "Medications": [
+        {
+          "name": "epinephrine",
+          "dosage": "Not specified"
+        },
+        {
+          "name": "Marcaine",
+          "dosage": "Not specified"
+        },
+        {
+          "name": "ic",
+          "dosage": "Not specified"
+        }
+      ],
+      "Procedures_Vitals": [
+        "sc",
+        "instruments",
+        "right"
+      ],
+      "Lab_Values": []
+    },
+    "Triage_Assessment": {
+      "Triage_Priority": "Low",
+      "Reasoning": [
+        "No critical or urgent clinical flags detected."
+      ]
+    },
+    "Patient_ID": "PT-1023"
+  },
+  {
+    "Original_Note_Length": 2,
+    "Extracted_Data": {
+      "Demographics": [],
+      "Symptoms": [],
+      "Diagnoses": [],
+      "Medications": [],
+      "Procedures_Vitals": [],
+      "Lab_Values": []
+    },
+    "Triage_Assessment": {
+      "Triage_Priority": "Low",
+      "Reasoning": [
+        "No critical or urgent clinical flags detected."
+      ]
+    },
+    "Patient_ID": "PT-1024"
+  },
+  {
+    "Original_Note_Length": 96,
+    "Extracted_Data": {
+      "Demographics": [],
+      "Symptoms": [
+        "bleeding"
+      ],
+      "Diagnoses": [],
+      "Medications": [
+        {
+          "name": "Vic",
+          "dosage": "Not specified"
+        }
+      ],
+      "Procedures_Vitals": [
+        "right vas"
+      ],
+      "Lab_Values": []
+    },
+    "Triage_Assessment": {
+      "Triage_Priority": "High",
+      "Reasoning": [
+        "Critical indicator: 'bleeding'"
+      ]
+    },
+    "Patient_ID": "PT-1025"
+  },
+  {
+    "Original_Note_Length": 169,
+    "Extracted_Data": {
+      "Demographics": [
+        "Age: 67-year old Hispanic male"
+      ],
+      "Symptoms": [
+        "enlarged",
+        "Enlarged",
+        "calci",
+        "cysto"
+      ],
+      "Diagnoses": [],
+      "Medications": [],
+      "Procedures_Vitals": [
+        "bladder",
+        "Blood group",
+        "Discharge hemoglo",
+        "Rh",
+        "prostate",
+        "condition",
+        "Cystourethroscopy",
+        "Physical examination",
+        "Ba",
+        "BUN",
+        "LABORATORY",
+        "creatinine",
+        "Hem",
+        "DS",
+        "Prothrombin",
+        "Abdomen",
+        "EKG",
+        "hematocrit",
+        "Chest x-ray",
+        "PTT"
+      ],
+      "Lab_Values": [
+        "normal",
+        "satisfactory",
+        "12",
+        "negative",
+        "abnormal"
+      ]
+    },
+    "Triage_Assessment": {
+      "Triage_Priority": "Low",
+      "Reasoning": [
+        "No critical or urgent clinical flags detected."
+      ]
+    },
+    "Patient_ID": "PT-1026"
+  },
+  {
+    "Original_Note_Length": 121,
+    "Extracted_Data": {
+      "Demographics": [],
+      "Symptoms": [],
+      "Diagnoses": [
+        "her"
+      ],
+      "Medications": [
+        {
+          "name": "Vic",
+          "dosage": "Not specified"
+        },
+        {
+          "name": "Vicryl",
+          "dosage": "Not specified"
+        }
+      ],
+      "Procedures_Vitals": [
+        "skin",
+        "fa",
+        "um"
+      ],
+      "Lab_Values": []
+    },
+    "Triage_Assessment": {
+      "Triage_Priority": "Low",
+      "Reasoning": [
+        "No critical or urgent clinical flags detected."
+      ]
+    },
+    "Patient_ID": "PT-1027"
+  },
+  {
+    "Original_Note_Length": 215,
+    "Extracted_Data": {
+      "Demographics": [],
+      "Symptoms": [],
+      "Diagnoses": [
+        "vase",
+        "omy"
+      ],
+      "Medications": [],
+      "Procedures_Vitals": [],
+      "Lab_Values": []
+    },
+    "Triage_Assessment": {
+      "Triage_Priority": "Low",
+      "Reasoning": [
+        "No critical or urgent clinical flags detected."
+      ]
+    },
+    "Patient_ID": "PT-1028"
+  },
+  {
+    "Original_Note_Length": 158,
+    "Extracted_Data": {
+      "Demographics": [],
+      "Symptoms": [
+        "bleeding"
+      ],
+      "Diagnoses": [
+        "azoospermia"
+      ],
+      "Medications": [
+        {
+          "name": "Tylen",
+          "dosage": "Not specified"
+        },
+        {
+          "name": "lidocaine",
+          "dosage": "Not specified"
+        }
+      ],
+      "Procedures_Vitals": [
+        "sc",
+        "condition",
+        "se",
+        "scrotal skin"
+      ],
+      "Lab_Values": [
+        "good"
+      ]
+    },
+    "Triage_Assessment": {
+      "Triage_Priority": "High",
+      "Reasoning": [
+        "Critical indicator: 'bleeding'"
+      ]
+    },
+    "Patient_ID": "PT-1029"
+  },
+  {
+    "Original_Note_Length": 202,
+    "Extracted_Data": {
+      "Demographics": [],
+      "Symptoms": [
+        "di",
+        "Fl",
+        "nocturia",
+        "void",
+        "straining"
+      ],
+      "Diagnoses": [
+        "GI"
+      ],
+      "Medications": [],
+      "Procedures_Vitals": [
+        "ur",
+        "pelvis",
+        "lower extremity",
+        "bow",
+        "pelvic",
+        "abdominal",
+        "abdomen"
+      ],
+      "Lab_Values": []
+    },
+    "Triage_Assessment": {
+      "Triage_Priority": "Low",
+      "Reasoning": [
+        "No critical or urgent clinical flags detected."
+      ]
+    },
+    "Patient_ID": "PT-1030"
+  },
+  {
+    "Original_Note_Length": 530,
+    "Extracted_Data": {
+      "Demographics": [
+        "Age: 66-year-old gentleman"
+      ],
+      "Symptoms": [
+        "shortness of breath",
+        "rash"
+      ],
+      "Diagnoses": [],
+      "Medications": [
+        {
+          "name": "Sodium",
+          "dosage": "Not specified"
+        },
+        {
+          "name": "Insulin",
+          "dosage": "Not specified"
+        },
+        {
+          "name": "Allop",
+          "dosage": "0.2 mg"
+        },
+        {
+          "name": "Cl",
+          "dosage": "50 mg"
+        }
+      ],
+      "Procedures_Vitals": [
+        "chest",
+        "Cystoscopy",
+        "urology",
+        "upper arm",
+        "ur"
+      ],
+      "Lab_Values": []
+    },
+    "Triage_Assessment": {
+      "Triage_Priority": "High",
+      "Reasoning": [
+        "Critical indicator: 'shortness of breath'"
+      ]
+    },
+    "Patient_ID": "PT-1031"
+  },
+  {
+    "Original_Note_Length": 181,
+    "Extracted_Data": {
+      "Demographics": [],
+      "Symptoms": [
+        "murmur",
+        "dia",
+        "ru",
+        "con",
+        "vomiting",
+        "calcification",
+        "weakness",
+        "hematuria",
+        "shortness of breath"
+      ],
+      "Diagnoses": [],
+      "Medications": [
+        {
+          "name": "Coumadin",
+          "dosage": "3 mg"
+        }
+      ],
+      "Procedures_Vitals": [
+        "chest",
+        "EXAMINATION",
+        "KUB",
+        "CT urogram",
+        "Right knee",
+        "REC"
+      ],
+      "Lab_Values": [
+        "Normal"
+      ]
+    },
+    "Triage_Assessment": {
+      "Triage_Priority": "High",
+      "Reasoning": [
+        "Critical indicator: 'shortness of breath'"
+      ]
+    },
+    "Patient_ID": "PT-1032"
+  },
+  {
+    "Original_Note_Length": 210,
+    "Extracted_Data": {
+      "Demographics": [],
+      "Symptoms": [
+        "defect",
+        "adhere"
+      ],
+      "Diagnoses": [
+        "hernia"
+      ],
+      "Medications": [
+        {
+          "name": "ep",
+          "dosage": "Not specified"
+        },
+        {
+          "name": "local anesthetic",
+          "dosage": "Not specified"
+        },
+        {
+          "name": "ryl",
+          "dosage": "Not specified"
+        },
+        {
+          "name": "lidocaine",
+          "dosage": "Not specified"
+        }
+      ],
+      "Procedures_Vitals": [
+        "fa",
+        "hernia sac",
+        "um",
+        "abdominal"
+      ],
+      "Lab_Values": []
+    },
+    "Triage_Assessment": {
+      "Triage_Priority": "Low",
+      "Reasoning": [
+        "No critical or urgent clinical flags detected."
+      ]
+    },
+    "Patient_ID": "PT-1033"
+  },
+  {
+    "Original_Note_Length": 288,
+    "Extracted_Data": {
+      "Demographics": [
+        "Age: 55-year-old female"
+      ],
+      "Symptoms": [
+        "det",
+        "bowel issues",
+        "inence",
+        "or instability",
+        "void",
+        "hem",
+        "urinary inc"
+      ],
+      "Diagnoses": [],
+      "Medications": [
+        {
+          "name": "VE",
+          "dosage": "Not specified"
+        },
+        {
+          "name": "Enablex",
+          "dosage": "50 mg"
+        }
+      ],
+      "Procedures_Vitals": [
+        "ur",
+        "cystoscopy"
+      ],
+      "Lab_Values": [
+        "low"
+      ]
+    },
+    "Triage_Assessment": {
+      "Triage_Priority": "Low",
+      "Reasoning": [
+        "No critical or urgent clinical flags detected."
+      ]
+    },
+    "Patient_ID": "PT-1034"
+  },
+  {
+    "Original_Note_Length": 108,
+    "Extracted_Data": {
+      "Demographics": [],
+      "Symptoms": [
+        "torsion",
+        "masses",
+        "pain"
+      ],
+      "Diagnoses": [],
+      "Medications": [],
+      "Procedures_Vitals": [
+        "sc",
+        "intra",
+        "scrotum",
+        "icular",
+        "Ultrasound examination",
+        "left ep",
+        "Scrotal",
+        "dy",
+        "icle",
+        "ep",
+        "scrotal wall",
+        "right",
+        "imaging"
+      ],
+      "Lab_Values": [
+        "normal"
+      ]
+    },
+    "Triage_Assessment": {
+      "Triage_Priority": "Medium",
+      "Reasoning": [
+        "Urgent indicator: 'pain'"
+      ]
+    },
+    "Patient_ID": "PT-1035"
+  },
+  {
+    "Original_Note_Length": 363,
+    "Extracted_Data": {
+      "Demographics": [
+        "Age: 74-year-old male"
+      ],
+      "Symptoms": [
+        "Hem",
+        "tumor"
+      ],
+      "Diagnoses": [],
+      "Medications": [],
+      "Procedures_Vitals": [
+        "bladder",
+        "Cystoscopy",
+        "left lateral",
+        "spinal",
+        "mucosa",
+        "ur",
+        "IV",
+        "al",
+        "periphery",
+        "Bladder"
+      ],
+      "Lab_Values": [
+        "normal"
+      ]
+    },
+    "Triage_Assessment": {
+      "Triage_Priority": "Low",
+      "Reasoning": [
+        "No critical or urgent clinical flags detected."
+      ]
+    },
+    "Patient_ID": "PT-1036"
+  },
+  {
+    "Original_Note_Length": 291,
+    "Extracted_Data": {
+      "Demographics": [
+        "Age: 77-year-old man"
+      ],
+      "Symptoms": [
+        "hypertrophied",
+        "retention",
+        "divert",
+        "ur",
+        "bladder stones"
+      ],
+      "Diagnoses": [],
+      "Medications": [
+        {
+          "name": "LMA anesthesia",
+          "dosage": "Not specified"
+        },
+        {
+          "name": "antibiotic",
+          "dosage": "Not specified"
+        }
+      ],
+      "Procedures_Vitals": [
+        "bladder",
+        "right lateral",
+        "ur",
+        "prostate",
+        "left lateral lobe",
+        "median lobe"
+      ],
+      "Lab_Values": []
+    },
+    "Triage_Assessment": {
+      "Triage_Priority": "Low",
+      "Reasoning": [
+        "No critical or urgent clinical flags detected."
+      ]
+    },
+    "Patient_ID": "PT-1037"
+  },
+  {
+    "Original_Note_Length": 307,
+    "Extracted_Data": {
+      "Demographics": [
+        "Age: 82-year-old male"
+      ],
+      "Symptoms": [
+        "flu",
+        "tumor"
+      ],
+      "Diagnoses": [],
+      "Medications": [],
+      "Procedures_Vitals": [
+        "bladder",
+        "lateral to the left ureter",
+        "ur",
+        "lateral",
+        "Bladder"
+      ],
+      "Lab_Values": []
+    },
+    "Triage_Assessment": {
+      "Triage_Priority": "Low",
+      "Reasoning": [
+        "No critical or urgent clinical flags detected."
+      ]
+    },
+    "Patient_ID": "PT-1038"
+  },
+  {
+    "Original_Note_Length": 622,
+    "Extracted_Data": {
+      "Demographics": [
+        "Age: 4-year-old boy"
+      ],
+      "Symptoms": [
+        "cold",
+        "nodules",
+        "pain",
+        "masses",
+        "stool",
+        "discomfort",
+        "unable to walk",
+        "void",
+        "rhinorrhea",
+        "swelling",
+        "murmurs",
+        "vomiting",
+        "twisting"
+      ],
+      "Diagnoses": [],
+      "Medications": [
+        {
+          "name": "hot",
+          "dosage": "Not specified"
+        }
+      ],
+      "Procedures_Vitals": [
+        "scrotum",
+        "icular",
+        "upper",
+        "inguin",
+        "appendix",
+        "Test",
+        "left testicular",
+        "ultrasound"
+      ],
+      "Lab_Values": [
+        "negative",
+        "Normal"
+      ]
+    },
+    "Triage_Assessment": {
+      "Triage_Priority": "Medium",
+      "Reasoning": [
+        "Urgent indicator: 'swelling'",
+        "Urgent indicator: 'pain'",
+        "Urgent indicator: 'vomiting'"
+      ]
+    },
+    "Patient_ID": "PT-1039"
+  },
+  {
+    "Original_Note_Length": 443,
+    "Extracted_Data": {
+      "Demographics": [
+        "Age: 59-year-old white male"
+      ],
+      "Symptoms": [
+        "benign",
+        "lesion",
+        "plastic",
+        "recovered",
+        "tumor"
+      ],
+      "Diagnoses": [
+        "coronary artery disease",
+        "transitional cell carcinoma",
+        "Mx transitional cell carcinoma"
+      ],
+      "Medications": [
+        {
+          "name": "ciprofloxacin",
+          "dosage": "Not specified"
+        }
+      ],
+      "Procedures_Vitals": [
+        "bladder",
+        "cystoscopy",
+        "rec",
+        "Cystoscopy",
+        "urinary bladder",
+        "ureteral orifice",
+        "examination",
+        "bio",
+        "left lateral",
+        "Cystourethroscopy",
+        "Rec",
+        "perineum",
+        "genitalia",
+        "medium",
+        "anterior",
+        "Card",
+        "urethra",
+        "Mx"
+      ],
+      "Lab_Values": [
+        "15 g"
+      ]
+    },
+    "Triage_Assessment": {
+      "Triage_Priority": "Low",
+      "Reasoning": [
+        "No critical or urgent clinical flags detected."
+      ]
+    },
+    "Patient_ID": "PT-1040"
+  },
+  {
+    "Original_Note_Length": 519,
+    "Extracted_Data": {
+      "Demographics": [
+        "Age: 48-year-old male"
+      ],
+      "Symptoms": [
+        "spermatocele"
+      ],
+      "Diagnoses": [],
+      "Medications": [],
+      "Procedures_Vitals": [
+        "left ep",
+        "left",
+        "dymis",
+        "tunica vaginalis",
+        "vas def"
+      ],
+      "Lab_Values": []
+    },
+    "Triage_Assessment": {
+      "Triage_Priority": "Low",
+      "Reasoning": [
+        "No critical or urgent clinical flags detected."
+      ]
+    },
+    "Patient_ID": "PT-1041"
+  },
+  {
+    "Original_Note_Length": 118,
+    "Extracted_Data": {
+      "Demographics": [],
+      "Symptoms": [
+        "swelling",
+        "hydrocele",
+        "Hypervascularity",
+        "dy"
+      ],
+      "Diagnoses": [
+        "ep"
+      ],
+      "Medications": [],
+      "Procedures_Vitals": [
+        "left ep",
+        "scrotal wall",
+        "Left testicular",
+        "left epididy",
+        "left testicle",
+        "right ep",
+        "testicle"
+      ],
+      "Lab_Values": [
+        "Normal",
+        "increased",
+        "normal"
+      ]
+    },
+    "Triage_Assessment": {
+      "Triage_Priority": "Medium",
+      "Reasoning": [
+        "Urgent indicator: 'swelling'"
+      ]
+    },
+    "Patient_ID": "PT-1042"
+  },
+  {
+    "Original_Note_Length": 1401,
+    "Extracted_Data": {
+      "Demographics": [
+        "Age: 65-year-old white male"
+      ],
+      "Symptoms": [
+        "unable to catheterize",
+        "bladder",
+        "divert",
+        "inence",
+        "inent",
+        "inc",
+        "ulum",
+        "dry",
+        "radiation changes",
+        "lesions"
+      ],
+      "Diagnoses": [],
+      "Medications": [],
+      "Procedures_Vitals": [
+        "General",
+        "under the pubic bone",
+        "lower urinary",
+        "pelvis",
+        "wall",
+        "pe",
+        "pelvic"
+      ],
+      "Lab_Values": []
+    },
+    "Triage_Assessment": {
+      "Triage_Priority": "Low",
+      "Reasoning": [
+        "No critical or urgent clinical flags detected."
+      ]
+    },
+    "Patient_ID": "PT-1043"
+  },
+  {
+    "Original_Note_Length": 368,
+    "Extracted_Data": {
+      "Demographics": [
+        "Age: 77-year-old male"
+      ],
+      "Symptoms": [
+        "pain"
+      ],
+      "Diagnoses": [],
+      "Medications": [],
+      "Procedures_Vitals": [
+        "dart",
+        "sc",
+        "al"
+      ],
+      "Lab_Values": [
+        "normal"
+      ]
+    },
+    "Triage_Assessment": {
+      "Triage_Priority": "Medium",
+      "Reasoning": [
+        "Urgent indicator: 'pain'"
+      ]
+    },
+    "Patient_ID": "PT-1044"
+  },
+  {
+    "Original_Note_Length": 300,
+    "Extracted_Data": {
+      "Demographics": [],
+      "Symptoms": [
+        "awoke"
+      ],
+      "Diagnoses": [],
+      "Medications": [
+        {
+          "name": "hetic",
+          "dosage": "Not specified"
+        },
+        {
+          "name": "ep",
+          "dosage": "Not specified"
+        },
+        {
+          "name": "Betadine",
+          "dosage": "Not specified"
+        },
+        {
+          "name": "lidoca",
+          "dosage": "Not specified"
+        }
+      ],
+      "Procedures_Vitals": [
+        "mid",
+        "is",
+        "ur",
+        "perineum",
+        "va",
+        "vagina",
+        "al orifice"
+      ],
+      "Lab_Values": []
+    },
+    "Triage_Assessment": {
+      "Triage_Priority": "Low",
+      "Reasoning": [
+        "No critical or urgent clinical flags detected."
+      ]
+    },
+    "Patient_ID": "PT-1045"
+  },
+  {
+    "Original_Note_Length": 425,
+    "Extracted_Data": {
+      "Demographics": [
+        "Age: 4-year-old boy"
+      ],
+      "Symptoms": [
+        "congestion",
+        "cong",
+        "tor",
+        "wound",
+        "Congestion"
+      ],
+      "Diagnoses": [],
+      "Medications": [
+        {
+          "name": "crystal",
+          "dosage": "300 mL"
+        },
+        {
+          "name": "Marcaine",
+          "dosage": "15 mL"
+        }
+      ],
+      "Procedures_Vitals": [
+        "dartos",
+        "um",
+        "tunica vaginal",
+        "subcutaneous tissue",
+        "left testis",
+        "Sponges",
+        "subdartos",
+        "tunica",
+        "test",
+        "FLUIDS",
+        "va",
+        "needle counts",
+        "one ultrasound"
+      ],
+      "Lab_Values": []
+    },
+    "Triage_Assessment": {
+      "Triage_Priority": "Low",
+      "Reasoning": [
+        "No critical or urgent clinical flags detected."
+      ]
+    },
+    "Patient_ID": "PT-1046"
+  },
+  {
+    "Original_Note_Length": 1116,
+    "Extracted_Data": {
+      "Demographics": [
+        "Age: 3-1/2-year-old boy"
+      ],
+      "Symptoms": [
+        "dil",
+        "ste",
+        "cted",
+        "obstruction"
+      ],
+      "Diagnoses": [
+        "renal"
+      ],
+      "Medications": [
+        {
+          "name": "l anesthetic",
+          "dosage": "1000 mL"
+        },
+        {
+          "name": "rac",
+          "dosage": "Not specified"
+        },
+        {
+          "name": "antibiotics",
+          "dosage": "Not specified"
+        },
+        {
+          "name": "General end",
+          "dosage": "Not specified"
+        }
+      ],
+      "Procedures_Vitals": [
+        "Cystoscopy",
+        "opelvic",
+        "cr",
+        "lvic",
+        "ureteropelvic junction",
+        "kidney",
+        "ur",
+        "FLUIDS",
+        "renal"
+      ],
+      "Lab_Values": []
+    },
+    "Triage_Assessment": {
+      "Triage_Priority": "Low",
+      "Reasoning": [
+        "No critical or urgent clinical flags detected."
+      ]
+    },
+    "Patient_ID": "PT-1047"
+  },
+  {
+    "Original_Note_Length": 649,
+    "Extracted_Data": {
+      "Demographics": [],
+      "Symptoms": [
+        "bleeding",
+        "injury"
+      ],
+      "Diagnoses": [
+        "Adenocarcinoma"
+      ],
+      "Medications": [
+        {
+          "name": "Betadine solutions",
+          "dosage": "Not specified"
+        }
+      ],
+      "Procedures_Vitals": [
+        "bladder",
+        "and",
+        "end",
+        "umbilicus",
+        "perito",
+        "pub",
+        "prostate",
+        "pe",
+        "camera",
+        "medial umbilical ligaments"
+      ],
+      "Lab_Values": []
+    },
+    "Triage_Assessment": {
+      "Triage_Priority": "High",
+      "Reasoning": [
+        "Critical indicator: 'bleeding'"
+      ]
+    },
+    "Patient_ID": "PT-1048"
+  },
+  {
+    "Original_Note_Length": 398,
+    "Extracted_Data": {
+      "Demographics": [
+        "Age: 16-month-old",
+        "Age: 16-month-old",
+        "Age: 16",
+        "Age: 21-year"
+      ],
+      "Symptoms": [
+        "febrile",
+        "edema",
+        "dysuria",
+        "pain",
+        "erythema",
+        "adhesions",
+        "cyanosis",
+        "el movements",
+        "Erythema",
+        "fever",
+        "cough",
+        "swelling"
+      ],
+      "Diagnoses": [],
+      "Medications": [
+        {
+          "name": "Codeine",
+          "dosage": "Not specified"
+        },
+        {
+          "name": "antibiotics",
+          "dosage": "Not specified"
+        },
+        {
+          "name": "Tylenol",
+          "dosage": "Not specified"
+        }
+      ],
+      "Procedures_Vitals": [
+        "pubic",
+        "pen"
+      ],
+      "Lab_Values": [
+        "negative",
+        "Positive"
+      ]
+    },
+    "Triage_Assessment": {
+      "Triage_Priority": "Medium",
+      "Reasoning": [
+        "Urgent indicator: 'swelling'",
+        "Urgent indicator: 'pain'",
+        "Urgent indicator: 'fever'"
+      ]
+    },
+    "Patient_ID": "PT-1049"
+  }
+]
