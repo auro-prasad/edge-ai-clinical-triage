@@ -188,11 +188,13 @@ export default function DoctorPortal() {
             {filteredQueue.map((enc) => {
               const activePriority = enc.doctor_override || enc.triage_priority;
               const style = getPriorityStyles(activePriority);
+              const xgbRisk = enc.xgboost_risk || enc.XGBoost_Assessment?.Predicted_Risk;
+              const xgbConf = enc.xgboost_confidence || enc.XGBoost_Assessment?.Confidence_Score;
+              const hasOverride = enc.safety_override || enc.safety_override_triggered || enc.Triage_Assessment?.safety_override_triggered;
               
               return (
                 <div 
                   key={enc.id} 
-                  // UPDATED: Use the new handler here
                   onClick={() => handlePatientClick(enc)}
                   className={`bg-white rounded-3xl p-6 shadow-sm ring-1 ring-zinc-200/60 cursor-pointer transition-all hover:shadow-md hover:-translate-y-1 relative overflow-hidden group border-l-4 ${style}`}
                 >
@@ -209,6 +211,29 @@ export default function DoctorPortal() {
                       <p className="text-xs text-zinc-500 font-medium">{enc.age} Yrs • {enc.gender}</p>
                     </div>
                   </div>
+
+                  {/* XGBoost Mathematical Baseline */}
+                  {xgbRisk && (
+                    <div className="mb-3 inline-flex items-center rounded-md bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-700/10">
+                      XGBoost Model: {xgbRisk} ({xgbConf})
+                    </div>
+                  )}
+
+                  {/* Safety Override Alert */}
+                  {hasOverride && (
+                    <div className="mb-4 rounded-md bg-red-50 p-3 border border-red-200">
+                      <div className="flex">
+                        <div className="ml-1">
+                          <h3 className="text-[10px] font-bold uppercase tracking-widest text-red-800">
+                            ⚠️ Automated Safety Override Triggered
+                          </h3>
+                          <div className="mt-1 text-xs text-red-700 font-medium leading-relaxed">
+                            <p>The AI's initial assessment was overruled due to critical vital signs.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )}
 
                   <p className="text-sm text-zinc-600 line-clamp-2 mb-6 h-10 leading-relaxed font-medium">
                     {enc.reasoning}
@@ -261,7 +286,7 @@ export default function DoctorPortal() {
                   {selectedEncounter.raw_note || "No raw note provided."}
                 </div>
 
-                {/* NEW BLOCK: Render the past history here */}
+                {/* Render the past history here */}
                 {patientHistory.length > 0 && (
                   <div className="mt-6 border-t border-zinc-200 pt-6">
                     <h4 className="text-xs font-bold uppercase tracking-widest text-zinc-400 mb-4 flex items-center gap-2">
@@ -293,6 +318,32 @@ export default function DoctorPortal() {
                 </div>
                 
                 <div className="bg-indigo-50/30 p-6 rounded-3xl ring-1 ring-indigo-100 space-y-4">
+                  {/* XGBoost Mathematical Baseline Details */}
+                  {(selectedEncounter.xgboost_risk || selectedEncounter.XGBoost_Assessment?.Predicted_Risk) && (
+                    <div>
+                      <p className="text-[10px] font-bold text-indigo-400 uppercase tracking-widest mb-1.5">Tabular ML Baseline</p>
+                      <span className="px-3 py-1 rounded-lg text-xs font-black uppercase tracking-widest ring-1 ring-inset bg-blue-50 text-blue-700 ring-blue-200">
+                        XGBoost Risk: {selectedEncounter.xgboost_risk || selectedEncounter.XGBoost_Assessment?.Predicted_Risk} ({selectedEncounter.xgboost_confidence || selectedEncounter.XGBoost_Assessment?.Confidence_Score})
+                      </span>
+                    </div>
+                  )}
+
+                  {/* Safety Override Alert Detail */}
+                  {(selectedEncounter.safety_override || selectedEncounter.safety_override_triggered || selectedEncounter.Triage_Assessment?.safety_override_triggered) && (
+                    <div className="rounded-md bg-red-50 p-4 border border-red-200 mb-4">
+                      <div className="flex">
+                        <div className="ml-1">
+                          <h3 className="text-xs font-bold text-red-800">
+                            ⚠️ Automated Safety Override Triggered
+                          </h3>
+                          <div className="mt-2 text-xs text-red-700">
+                            <p>The language model's initial assessment was overruled due to critical vital signs detected by the XGBoost algorithm.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
                   <div>
                     <p className="text-[10px] font-bold text-indigo-400 uppercase tracking-widest mb-1.5">Original AI Priority</p>
                     <span className={`px-3 py-1 rounded-lg text-xs font-black uppercase tracking-widest ring-1 ring-inset ${getPriorityStyles(selectedEncounter.triage_priority)}`}>

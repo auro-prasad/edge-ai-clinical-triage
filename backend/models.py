@@ -54,4 +54,10 @@ class TriageEncounter(Base):
     override_reason = Column(String(255), nullable=True)
     status = Column(String(50), default="WAITING") 
     created_at = Column(DateTime, default=datetime.utcnow)
+    
+    # --- NEW FIELDS FOR DUAL-ENGINE AI ---
+    xgboost_risk = Column(String(20), nullable=True)
+    xgboost_confidence = Column(String(20), nullable=True)
+    safety_override = Column(Boolean, default=False)
+    
     patient = relationship("PatientProfile", back_populates="encounters")

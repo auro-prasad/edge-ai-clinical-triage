@@ -238,7 +238,7 @@ class NotePayload(BaseModel):
 
 @app.post("/api/process-note")
 def process_note(req: NotePayload, db: Session = Depends(get_db)):
-    """Process clinical note via Local Ollama (Llama 3.1) and tie it to the specific MRN."""
+    """Process clinical note via the Neuro-Symbolic ML Pipeline."""
     if not req.raw_note.strip():
         raise HTTPException(status_code=400, detail="Note text cannot be empty.")
         
@@ -246,100 +246,52 @@ def process_note(req: NotePayload, db: Session = Depends(get_db)):
     if not patient:
         raise HTTPException(status_code=404, detail="Patient MRN not found.")
 
-    # 1. The Prompt (Tuned for Llama 3)
-    prompt = f"""
-    You are an expert ER triage AI. 
-    Patient Details: Name={patient.name}, Age={patient.age}, Gender={patient.gender}.
-    
-    CRITICAL INSTRUCTION: If the following clinical note contains non-medical text, random gibberish, greetings, or is irrelevant to a clinical setting, you MUST assign the Triage_Priority as "INVALID".
-    
-    Clinical Note: {req.raw_note.strip()}
-    
-    Respond ONLY with a valid JSON object using this exact structure:
-    {{
-        "Patient_ID": "MRN-{str(patient.mrn).zfill(4)}",
-        "Patient_Name": "{patient.name}",
-        "Triage_Assessment": {{
-            "Triage_Priority": "HIGH", "MEDIUM", "LOW", or "INVALID",
-            "Reasoning": "Clinical justification here."
-        }},
-        "Laymans_Terms": "Patient friendly explanation."
-    }}
-    """
-    
-    # 2. Call LOCAL Ollama API using Phi-3
+    # 1. RUN THE NEW DUAL-ENGINE PIPELINE
     try:
-        # CHANGE THIS LINE: Replace localhost with 127.0.0.1
-        response = requests.post("http://127.0.0.1:11434/api/generate", json={
-            "model": "phi3",  
-            "prompt": prompt,
-            "format": "json",  
-            "stream": False,   
-            "options": {
-                "temperature": 0.1 
-            }
-        }, timeout=120) # ALSO: Increase timeout to 120 seconds for the first run!
-        
-        response.raise_for_status() # Check for HTTP errors
-        response_text = response.json().get("response", "{}")
-        result_dict = json.loads(response_text)
-            
-    except requests.exceptions.RequestException as e:
-        print(f"Ollama Connection Error: {str(e)}")
-        raise HTTPException(
-            status_code=503, 
-            detail="The local AI engine is offline. Please ensure Ollama is running in the background."
-        )
-    except json.JSONDecodeError:
-        raise HTTPException(
-            status_code=500, 
-            detail="The AI generated an invalid response format."
-        )
+        result_dict = run_pipeline(req.raw_note.strip())
+    except Exception as e:
+        print(f"Pipeline Error: {str(e)}")
+        raise HTTPException(status_code=503, detail="The AI engine failed to process the note.")
     
-    # 3. Extract the data safely
+    # 2. Extract Data
     triage_info = result_dict.get("Triage_Assessment", {})
     priority = str(triage_info.get("Triage_Priority", "MEDIUM")).upper()
     reasoning = str(triage_info.get("Reasoning", "No reasoning provided."))
-    laymans = str(result_dict.get("Laymans_Terms", "No translation provided."))
+    laymans = str(triage_info.get("Laymans_Terms", "No translation provided."))
+    safety_override = bool(triage_info.get("safety_override_triggered", False))
 
-    # 4. Prevent Gibberish from entering the database
+    xgb_info = result_dict.get("XGBoost_Assessment", {})
+    xgb_risk = xgb_info.get("Predicted_Risk")
+    xgb_conf = xgb_info.get("Confidence_Score")
+
     if priority == "INVALID":
-        raise HTTPException(
-            status_code=400,
-            detail="The AI detected non-medical or invalid text. Please enter a valid clinical observation."
-        )
+        raise HTTPException(status_code=400, detail="The AI detected invalid text.")
 
-    # 5. Append the Encounter to the Database
+    # 3. Save to Database with new XGBoost fields
     new_encounter = models.TriageEncounter(
         mrn=patient.mrn,
         raw_note=req.raw_note.strip(),
         triage_priority=priority,
         reasoning=reasoning,
         laymans_terms=laymans,
-        status="WAITING"
+        status="WAITING",
+        xgboost_risk=xgb_risk,
+        xgboost_confidence=xgb_conf,
+        safety_override=safety_override
     )
     db.add(new_encounter)
     db.commit()
     db.refresh(new_encounter)
 
-    # 6. Format Response & Trigger JSON Backup
-    response_data = {
+    return {
         "id": new_encounter.id,
         "Patient_ID": f"MRN-{patient.mrn}",
         "Patient_Name": patient.name,
-        "Patient_Age": patient.age,
-        "Patient_Gender": patient.gender,
         "Triage_Assessment": triage_info,
-        "created_at": new_encounter.created_at
+        "XGBoost_Assessment": xgb_info
     }
-    
-    # If you still have your save_json_backup function, keep this!
-    # save_json_backup(response_data) 
-    
-    return response_data
-# ==========================================
-# DOCTOR ENDPOINTS (Review & Action)
-# ==========================================
+
+
 @app.get("/api/patients")
 def get_triage_queue(db: Session = Depends(get_db)):
     """Retrieve all active encounters currently WAITING in the ER."""
@@ -360,7 +312,11 @@ def get_triage_queue(db: Session = Depends(get_db)):
             "raw_note": enc.raw_note,             
             "laymans_terms": enc.laymans_terms,
             "doctor_override": enc.doctor_override,
-            "created_at": enc.created_at
+            "created_at": enc.created_at,
+            # Pass the ML metrics to the frontend
+            "xgboost_risk": enc.xgboost_risk,
+            "xgboost_confidence": enc.xgboost_confidence,
+            "safety_override": enc.safety_override
         })
     return queue
 
@@ -411,11 +367,15 @@ def get_system_metrics(db: Session = Depends(get_db)):
     
     total_encounters = len(encounters)
     if total_encounters == 0:
-        return {"total": 0, "distribution": {}, "override_rate": 0, "overrides": 0}
+        return {
+            "total": 0, "distribution": {}, "override_rate": 0, 
+            "overrides": 0, "ai_interventions": 0, "ai_intervention_rate": 0
+        }
 
     # Calculate Triage Distribution
     distribution = {"HIGH": 0, "MEDIUM": 0, "LOW": 0}
     overrides = 0
+    ai_interventions = 0
 
     for enc in encounters:
         # Triage breakdown
@@ -423,17 +383,24 @@ def get_system_metrics(db: Session = Depends(get_db)):
         if priority in distribution:
             distribution[priority] += 1
             
-        # Count human-in-the-loop overrides
+        # Count human-in-the-loop overrides (Doctor overruling AI)
         if enc.doctor_override:
             overrides += 1
+            
+        # Count Neuro-Symbolic overrides (XGBoost overruling Phi-3)
+        if getattr(enc, 'safety_override', False):
+            ai_interventions += 1
 
     override_rate = round((overrides / total_encounters) * 100, 1)
+    ai_intervention_rate = round((ai_interventions / total_encounters) * 100, 1)
 
     return {
         "total": total_encounters,
         "distribution": distribution,
         "overrides": overrides,
-        "override_rate": override_rate
+        "override_rate": override_rate,
+        "ai_interventions": ai_interventions,
+        "ai_intervention_rate": ai_intervention_rate
     }
 
 @app.get("/api/admin/export")
@@ -495,6 +462,7 @@ def get_network_directory(db: Session = Depends(get_db)):
                 
         directory.append({
             "user_id": u.username,
+            "password": u.password,
             "role": u.role.capitalize(),
             "name": name,
             "email": email
