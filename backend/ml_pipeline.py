@@ -28,7 +28,7 @@ class XGBoostModel:
         predicted_class = int(np.argmax(probs))
         confidence = float(np.max(probs))
         
-        # Model mapping: 0=High, 1=Medium, 2=Low
+        # Model mapping: 0=Low, 1=Medium, 2=High
         mapping = {0: "Low", 1: "Medium", 2: "High"}
         return mapping[predicted_class], confidence
 
@@ -46,11 +46,10 @@ def ask_phi3(prompt):
 def run_pipeline(text):
     """The master pipeline combining Deterministic ML and Generative AI"""
     
-    # STAGE 1: Normalization (Using your external normalizer.py)
+    # STAGE 1: Normalization
     normalized_text = normalize_clinical_text(text)
     
     # STAGE 2: XGBoost Mathematical Vitals Assessment
-    # We drop age to strictly match your pre-trained model's 6 dimensions
     vitals_dict = extract_and_impute_vitals(normalized_text)
     
     # Convert dictionary to DataFrame strictly matching the 6 features expected by the model
@@ -71,10 +70,13 @@ def run_pipeline(text):
         xgb_context = f"\n[ML SYSTEM ALERT: An XGBoost tabular model evaluated the extracted vital signs and calculated a '{xgb_priority}' risk classification with {xgb_conf*100:.1f}% statistical confidence. Incorporate this mathematical baseline into your final assessment.]\n"
 
     # STAGE 3: Generative Text Analysis (Phi-3)
+    # UPDATED: Added semantic guardrails and requested highly detailed clinical/patient explanations.
     prompt = f"""
-    You are an expert clinical triage AI. Read the following normalized clinical note:
+    You are an expert clinical triage AI. Read the following normalized text:
     "{normalized_text}"
     {xgb_context}
+    
+    CRITICAL RULE: You must first determine if the text is a genuine medical complaint. If the text is a greeting, a random sentence, gibberish, or lacks any medical context, you MUST completely ignore the ML SYSTEM ALERT and return "INVALID" for the Triage_Priority.
     
     You must extract medical entities and perform triage analysis. 
     Return a raw JSON object (without markdown formatting or code blocks) with EXACTLY this structure:
@@ -86,9 +88,9 @@ def run_pipeline(text):
             "Procedures_Vitals": ["list"]
         }},
         "Triage_Assessment": {{
-            "Triage_Priority": "Evaluate the text. Return exactly 'High', 'Medium', 'Low', or 'INVALID'.",
-            "Reasoning": "1-2 sentence clinical reasoning.",
-            "Laymans_Terms": "A simple translation for the patient."
+            "Triage_Priority": "Return exactly 'High', 'Medium', 'Low', or 'INVALID'.",
+            "Reasoning": "Provide detailed, comprehensive clinical reasoning for the attending physician. Explain the physiological risks, note any missing data, and thoroughly justify the priority level.",
+            "Laymans_Terms": "Provide a clear, comforting, and detailed explanation for the patient without medical jargon, explaining what their assessment means and what the next steps in their care might look like."
         }}
     }}
     """
@@ -98,6 +100,12 @@ def run_pipeline(text):
         
         # STAGE 4: The Supervisory Arbitrator (Clinical Fail-Safe)
         final_priority = phi3_result.get("Triage_Assessment", {}).get("Triage_Priority", "Medium")
+        
+        # 🚨 THE NEW CIRCUIT BREAKER 🚨
+        # If Phi-3 detects non-medical text, bypass XGBoost completely.
+        if final_priority == "INVALID":
+            phi3_result["XGBoost_Assessment"] = {}
+            return phi3_result
         
         if xgb_priority == "High" and final_priority in ["Medium", "Low"]:
             # Auto-Escalate: Phi-3 missed a physiological red flag. Force override.

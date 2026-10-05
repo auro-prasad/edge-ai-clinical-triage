@@ -254,18 +254,27 @@ def process_note(req: NotePayload, db: Session = Depends(get_db)):
         raise HTTPException(status_code=503, detail="The AI engine failed to process the note.")
     
     # 2. Extract Data
-    triage_info = result_dict.get("Triage_Assessment", {})
+    triage_info = result_dict.get("Triage_Assessment") or {}
     priority = str(triage_info.get("Triage_Priority", "MEDIUM")).upper()
+    
+    # 🚨 FIX 1: Use the correct variables (`priority` and `result_dict`)
+    if priority == "INVALID":
+        return {
+            "Patient_ID": f"MRN-{patient.mrn}",
+            "Patient_Name": patient.name,
+            "Extracted_Data": result_dict.get("Extracted_Data", {}),
+            "Triage_Assessment": triage_info,
+            "XGBoost_Assessment": {}
+        }
+
     reasoning = str(triage_info.get("Reasoning", "No reasoning provided."))
     laymans = str(triage_info.get("Laymans_Terms", "No translation provided."))
     safety_override = bool(triage_info.get("safety_override_triggered", False))
 
-    xgb_info = result_dict.get("XGBoost_Assessment", {})
+    # 🚨 FIX 2: Safely handle XGBoost info in case it returns None
+    xgb_info = result_dict.get("XGBoost_Assessment") or {}
     xgb_risk = xgb_info.get("Predicted_Risk")
     xgb_conf = xgb_info.get("Confidence_Score")
-
-    if priority == "INVALID":
-        raise HTTPException(status_code=400, detail="The AI detected invalid text.")
 
     # 3. Save to Database with new XGBoost fields
     new_encounter = models.TriageEncounter(
@@ -290,7 +299,6 @@ def process_note(req: NotePayload, db: Session = Depends(get_db)):
         "Triage_Assessment": triage_info,
         "XGBoost_Assessment": xgb_info
     }
-
 
 @app.get("/api/patients")
 def get_triage_queue(db: Session = Depends(get_db)):

@@ -142,7 +142,11 @@ export default function NursePortal() {
         <header className="mb-8 flex justify-between items-center">
           <h1 className="font-extrabold text-xl tracking-tight hidden sm:block">Workspace <span className="text-zinc-300 font-normal mx-2">|</span> {nurseName}</h1>
           <div className="sm:hidden w-9 h-9 bg-zinc-900 rounded-xl flex items-center justify-center"><Activity className="w-5 h-5 text-white" /></div>
-          <button onClick={handleSignOut} className="sm:hidden p-2.5 bg-white ring-1 ring-zinc-200 hover:bg-red-50 rounded-xl text-red-600 transition-colors"><LogOut className="w-4 h-4" /></button>
+          
+          {/* UPDATED: Removed sm:hidden so the button always shows on desktop too */}
+          <button onClick={handleSignOut} className="p-2.5 bg-white ring-1 ring-zinc-200 hover:bg-red-50 rounded-xl text-red-600 transition-colors">
+            <LogOut className="w-4 h-4" />
+          </button>
         </header>
 
         <div className="max-w-7xl mx-auto">
