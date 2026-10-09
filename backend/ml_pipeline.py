@@ -14,7 +14,8 @@ OLLAMA_URL = "http://127.0.0.1:11434/api/generate"
 class XGBoostModel:
     """Stage 2B: Tabular Inference."""
     def __init__(self):
-        self.model = xgb.XGBClassifier()
+        # Update 1: Use native Booster
+        self.model = xgb.Booster() 
         self.is_loaded = False
         if os.path.exists("xgb_triage_model.json"):
             self.model.load_model("xgb_triage_model.json")
@@ -24,12 +25,15 @@ class XGBoostModel:
         if not self.is_loaded:
             return None, None
             
-        probs = self.model.predict_proba(vitals_df)[0]
+        # Update 2 & 3: Convert to DMatrix and use predict()
+        dmatrix = xgb.DMatrix(vitals_df)
+        probs = self.model.predict(dmatrix)[0]
+        
         predicted_class = int(np.argmax(probs))
         confidence = float(np.max(probs))
         
-        # Model mapping: 0=Low, 1=Medium, 2=High
-        mapping = {0: "Low", 1: "Medium", 2: "High"}
+        
+        mapping = {0: "High", 1: "Medium", 2: "Low"}
         return mapping[predicted_class], confidence
 
 def ask_phi3(prompt):
@@ -50,25 +54,29 @@ def run_pipeline(text):
     normalized_text = normalize_clinical_text(text)
     
     # STAGE 2: XGBoost Mathematical Vitals Assessment
+    # STAGE 2: XGBoost Mathematical Vitals Assessment
     vitals_dict = extract_and_impute_vitals(normalized_text)
     
-    # Convert dictionary to DataFrame strictly matching the 6 features expected by the model
-    vitals_df = pd.DataFrame([[
-        vitals_dict.get("HeartRate", 80.0), 
-        vitals_dict.get("SystolicBP", 120.0), 
-        vitals_dict.get("DiastolicBP", 80.0), 
-        vitals_dict.get("SpO2", 98.0), 
-        vitals_dict.get("RespiratoryRate", 16.0), 
-        vitals_dict.get("Temperature", 37.0)
-    ]], columns=['heartrate', 'sbp', 'dbp', 'o2sat', 'resprate', 'temperature'])
-    
-    xgb_model = XGBoostModel()
-    xgb_priority, xgb_conf = xgb_model.predict_risk(vitals_df)
-    
     xgb_context = ""
-    if xgb_priority:
-        xgb_context = f"\n[ML SYSTEM ALERT: An XGBoost tabular model evaluated the extracted vital signs and calculated a '{xgb_priority}' risk classification with {xgb_conf*100:.1f}% statistical confidence. Incorporate this mathematical baseline into your final assessment.]\n"
-
+    xgb_priority = None
+    xgb_conf = None
+    
+    # ONLY trigger XGBoost if the parser actually found real medical data
+    # (Ensures vitals_dict is not empty and has at least one valid number)
+    if vitals_dict and any(v is not None for v in vitals_dict.values()):
+        vitals_df = pd.DataFrame([[
+            vitals_dict.get("HeartRate", 80.0), 
+            vitals_dict.get("SystolicBP", 120.0), 
+            vitals_dict.get("DiastolicBP", 80.0), 
+            vitals_dict.get("SpO2", 98.0), 
+            vitals_dict.get("RespiratoryRate", 16.0), 
+            vitals_dict.get("Temperature", 37.0)
+        ]], columns=['heartrate', 'sbp', 'dbp', 'o2sat', 'resprate', 'temperature'])
+        
+        xgb_model = XGBoostModel()
+        xgb_priority, xgb_conf = xgb_model.predict_risk(vitals_df)
+        
+        xgb_context = f"\n[VITALS ASSESSMENT: Objective vital signs indicate a '{xgb_priority}' risk level. Consider this physiological baseline in your clinical decision.]\n"
     # STAGE 3: Generative Text Analysis (Phi-3)
     # UPDATED: Added semantic guardrails and requested highly detailed clinical/patient explanations.
     prompt = f"""
@@ -76,10 +84,16 @@ def run_pipeline(text):
     "{normalized_text}"
     {xgb_context}
     
-    CRITICAL RULE: You must first determine if the text is a genuine medical complaint. If the text is a greeting, a random sentence, gibberish, or lacks any medical context, you MUST completely ignore the ML SYSTEM ALERT and return "INVALID" for the Triage_Priority.
+    CRITICAL RULE 1 - THE CIRCUIT BREAKER: First, evaluate if the text is a genuine medical complaint. If it is a greeting (e.g., "hello"), random gibberish, or non-clinical text, you MUST abort triage and return EXACTLY this minimal JSON, completely omitting the Extracted_Data:
+    {{
+        "Triage_Assessment": {{
+            "Triage_Priority": "INVALID",
+            "Reasoning": "Non-medical text detected. Triage aborted.",
+            "Laymans_Terms": "Please provide a valid description of your symptoms."
+        }}
+    }}
     
-    You must extract medical entities and perform triage analysis. 
-    Return a raw JSON object (without markdown formatting or code blocks) with EXACTLY this structure:
+    CRITICAL RULE 2 - FULL TRIAGE: If and ONLY if the text is a valid medical note, perform full extraction and triage. Return EXACTLY this structure:
     {{
         "Extracted_Data": {{
             "Diagnoses": ["list"],
@@ -88,13 +102,12 @@ def run_pipeline(text):
             "Procedures_Vitals": ["list"]
         }},
         "Triage_Assessment": {{
-            "Triage_Priority": "Return exactly 'High', 'Medium', 'Low', or 'INVALID'.",
-            "Reasoning": "Provide detailed, comprehensive clinical reasoning for the attending physician. Explain the physiological risks, note any missing data, and thoroughly justify the priority level.",
-            "Laymans_Terms": "Provide a clear, comforting, and detailed explanation for the patient without medical jargon, explaining what their assessment means and what the next steps in their care might look like."
+            "Triage_Priority": "Return 'High', 'Medium', or 'Low'",
+            "Reasoning": "Provide a brief, maximum 3-sentence clinical rationale for the attending doctor. Focus strictly on physiological risks. NEVER mention AI or algorithms.",
+            "Laymans_Terms": "Provide a clear, comforting explanation for the patient."
         }}
     }}
-    """
-    
+    """    
     try:
         phi3_result = ask_phi3(prompt)
         
